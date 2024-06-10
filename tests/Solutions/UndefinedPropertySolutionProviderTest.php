@@ -1,6 +1,6 @@
 <?php
 
-use Spatie\Ignition\Solutions\SolutionProviders\UndefinedPropertySolutionProvider;
+use Spatie\ErrorSolutions\Solutions\SolutionProviders\UndefinedPropertySolutionProvider;
 
 it('can solve an undefined property exception when there is a similar property', function () {
     $providerClass = UndefinedPropertySolutionProvider::class;
@@ -23,7 +23,7 @@ it('can recommend a property name when there is a similar property', function ()
 
     $solution = (new $providerClass)->getSolutions(getUndefinedPropertyException())[0];
 
-    expect($solution->getSolutionDescription())->toEqual('Did you mean Spatie\Ignition\Tests\TestClasses\Models\Car::$color ?');
+    expect($solution->getSolutionDescription())->toEqual('Did you mean Spatie\ErrorSolutions\Tests\TestClasses\Models\Car::$color ?');
 });
 
 it('cannot recommend a property name when there is no similar property', function () {
@@ -37,5 +37,5 @@ it('cannot recommend a property name when there is no similar property', functio
 // Helpers
 function getUndefinedPropertyException(string $property = 'colro'): ErrorException
 {
-    return new ErrorException("Undefined property: Spatie\Ignition\Tests\TestClasses\Models\Car::$$property ");
+    return new ErrorException("Undefined property: Spatie\ErrorSolutions\Tests\TestClasses\Models\Car::$$property ");
 }

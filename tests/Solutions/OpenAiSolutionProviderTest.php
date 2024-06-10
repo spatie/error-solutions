@@ -1,11 +1,9 @@
 <?php
 
-namespace Spatie\Ignition\Tests\Solutions;
-
 use Exception;
 use Illuminate\Cache\ArrayStore;
 use Illuminate\Cache\Repository;
-use Spatie\Ignition\Solutions\OpenAi\OpenAiSolutionProvider;
+use Spatie\ErrorSolutions\Solutions\OpenAi\OpenAiSolutionProvider;
 
 it('can solve an an exception using ai', function () {
     if (! canRunOpenAiTest()) {
