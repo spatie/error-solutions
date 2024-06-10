@@ -49,3 +49,28 @@ parameters:
 			message: "#^Method Spatie\\\\ErrorSolutions\\\\Support\\\\Renderer\\:\\:renderAsString\\(\\) should return string but returns string\\|false\\.$#"
 			count: 1
 			path: src/Support/Renderer.php
+
+		-
+			message: "#^Parameter \\#1 \\$missingView of method Spatie\\\\ErrorSolutions\\\\Laravel\\\\Solutions\\\\SolutionProviders\\\\ViewNotFoundSolutionProvider\\:\\:findRelatedView\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: src/Laravel/Solutions/SolutionProviders/ViewNotFoundSolutionProvider.php
+
+		-
+			message: "#^Method Spatie\\\\ErrorSolutions\\\\Laravel\\\\Solutions\\\\SolutionProviders\\\\UnknownValidationSolutionProvider\\:\\:getAvailableMethods\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Laravel/Solutions/SolutionProviders/UnknownValidationSolutionProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<int,ReflectionMethod\\>\\:\\:filter\\(\\) expects \\(callable\\(ReflectionMethod, int\\)\\: bool\\)\\|null, Closure\\(ReflectionMethod\\)\\: \\(0\\|1\\|false\\) given\\.$#"
+			count: 1
+			path: src/Laravel/Solutions/SolutionProviders/UnknownValidationSolutionProvider.php
+
+		-
+			message: "#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			count: 1
+			path: src/Laravel/Solutions/SolutionProviders/UnknownValidationSolutionProvider.php
+
+		-
+			message: "#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			count: 1
+			path: src/Laravel/Solutions/SolutionProviders/UnknownValidationSolutionProvider.php

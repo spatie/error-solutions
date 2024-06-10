@@ -4,7 +4,7 @@
 [![Tests](https://img.shields.io/github/actions/workflow/status/spatie/error-solutions/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/spatie/error-solutions/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/error-solutions.svg?style=flat-square)](https://packagist.org/packages/spatie/error-solutions)
 
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
+At Spatie we develop multiple packages handling errors and providing solutions for these errors. This package is a collection of all these solutions.
 
 ## Support us
 
@@ -24,10 +24,10 @@ composer require spatie/error-solutions
 
 ## Usage
 
-```php
-$skeleton = new Spatie\ErrorSolutions();
-echo $skeleton->echoPhrase('Hello, Spatie!');
-```
+We've got some excellent documentation on how to use solutions:
+
+- [Flare](https://flareapp.io/docs/ignition/solutions/implementing-solutions)
+- [Ignition](https://github.com/spatie/ignition/?tab=readme-ov-file#displaying-solutions)
 
 ## Testing
 

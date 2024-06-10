@@ -8,7 +8,6 @@ use Livewire\LivewireManager;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionProperty;
-use function Spatie\LaravelIgnition\Support\app;
 
 class LivewireComponentParser
 {

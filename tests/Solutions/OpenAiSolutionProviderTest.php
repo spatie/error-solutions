@@ -1,6 +1,5 @@
 <?php
 
-use Exception;
 use Illuminate\Cache\ArrayStore;
 use Illuminate\Cache\Repository;
 use Spatie\ErrorSolutions\Solutions\OpenAi\OpenAiSolutionProvider;

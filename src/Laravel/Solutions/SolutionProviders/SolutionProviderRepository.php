@@ -12,7 +12,7 @@ use Throwable;
 class SolutionProviderRepository implements SolutionProviderRepositoryContract
 {
     /**
-     * @param array<int, ProvidesSolution> $solutionProviders
+     * @var Collection<int, ProvidesSolution> $solutionProviders
      */
     protected Collection $solutionProviders;
 
@@ -50,7 +50,6 @@ class SolutionProviderRepository implements SolutionProviderRepositoryContract
             $solutions[] = $throwable->getSolution();
         }
 
-        /** @phpstan-ignore-next-line  */
         $providedSolutions = $this->solutionProviders
             ->filter(function (string $solutionClass) {
                 if (! in_array(HasSolutionsForThrowable::class, class_implements($solutionClass) ?: [])) {

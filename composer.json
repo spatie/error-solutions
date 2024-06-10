@@ -19,8 +19,8 @@
     },
     "require-dev" : {
         "livewire/livewire": "^2.11|^3.3.5",
-        "illuminate/support": "^10.0|^11.0",
-        "illuminate/broadcasting" : "^10.0|^11.0",
+        "illuminate/support": "^9.0|^10.0|^11.0",
+        "illuminate/broadcasting" : "^9.0|^10.0|^11.0",
         "openai-php/client": "^0.10.1",
         "illuminate/cache" : "^9.52|^10.0|^11.0",
         "laravel/pint" : "^1.0",
@@ -30,7 +30,8 @@
         "spatie/ray" : "^1.28",
         "symfony/cache" : "^5.4|^6.0|^7.0",
         "symfony/process" : "^5.4|^6.0|^7.0",
-        "vlucas/phpdotenv" : "^5.5"
+        "vlucas/phpdotenv" : "^5.5",
+        "orchestra/testbench": "^7.0|8.22.3|^9.0"
     },
     "autoload" : {
         "psr-4" : {
