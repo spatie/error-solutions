@@ -2,10 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Livewire\LivewireComponentsFinder;
-use Spatie\ErrorSolutions\Contracts\RunnableSolution;
+use Spatie\ErrorSolutions\Solutions\Laravel\LivewireDiscoverSolution as BaseLivewireDiscoverSolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class LivewireDiscoverSolution extends \Spatie\ErrorSolutions\Laravel\Solutions\LivewireDiscoverSolution
+class LivewireDiscoverSolution extends BaseLivewireDiscoverSolutionAlias  implements Solution
 {
 
 }

@@ -2,8 +2,9 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\Laravel\SuggestLivewireMethodNameSolution as BaseSuggestLivewireMethodNameSolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class SuggestLivewireMethodNameSolution extends \Spatie\ErrorSolutions\Laravel\Solutions\SuggestLivewireMethodNameSolution
+class SuggestLivewireMethodNameSolution extends BaseSuggestLivewireMethodNameSolutionAlias implements Solution
 {
 }

@@ -2,10 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Illuminate\Support\Str;
-use Spatie\ErrorSolutions\Contracts\RunnableSolution;
+use Spatie\ErrorSolutions\Solutions\Laravel\UseDefaultValetDbCredentialsSolution as BaseUseDefaultValetDbCredentialsSolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class UseDefaultValetDbCredentialsSolution extends \Spatie\ErrorSolutions\Laravel\Solutions\UseDefaultValetDbCredentialsSolution
+class UseDefaultValetDbCredentialsSolution extends BaseUseDefaultValetDbCredentialsSolutionAlias implements Solution
 {
 
 }

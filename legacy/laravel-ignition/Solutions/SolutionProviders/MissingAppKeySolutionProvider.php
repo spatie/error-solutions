@@ -2,12 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use RuntimeException;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Laravel\Solutions\GenerateAppKeySolution;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingAppKeySolutionProvider as BaseMissingAppKeySolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class MissingAppKeySolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\MissingAppKeySolutionProvider
+class MissingAppKeySolutionProvider extends BaseMissingAppKeySolutionProviderAlias  implements HasSolutionsForThrowable
 {
 
 }

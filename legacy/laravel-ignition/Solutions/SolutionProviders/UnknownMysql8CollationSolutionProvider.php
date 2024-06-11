@@ -2,12 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Illuminate\Database\QueryException;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Laravel\Solutions\SuggestUsingMysql8DatabaseSolution;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\UnknownMysql8CollationSolutionProvider as BaseUnknownMysql8CollationSolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class UnknownMysql8CollationSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\UnknownMysql8CollationSolutionProvider
+class UnknownMysql8CollationSolutionProvider extends BaseUnknownMysql8CollationSolutionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

@@ -9,7 +9,7 @@ use Spatie\ErrorSolutions\Contracts\Solution;
 use Spatie\Ignition\Contracts\SolutionProviderRepository as SolutionProviderRepositoryContract;
 use Throwable;
 
-class SolutionProviderRepository extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\SolutionProviderRepository implements SolutionProviderRepositoryContract
+class SolutionProviderRepository extends \Spatie\ErrorSolutions\SolutionProviders\Laravel\SolutionProviderRepository implements SolutionProviderRepositoryContract
 {
 
 }

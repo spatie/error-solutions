@@ -2,9 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\SuggestCorrectVariableNameSolution as BaseSuggestCorrectVariableNameSolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class SuggestCorrectVariableNameSolution extends \Spatie\ErrorSolutions\Laravel\Solutions\SuggestCorrectVariableNameSolution
+class SuggestCorrectVariableNameSolution extends BaseSuggestCorrectVariableNameSolutionAlias implements Solution
 {
 
 }

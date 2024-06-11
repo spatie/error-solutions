@@ -1,14 +1,11 @@
 <?php
 
-
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Illuminate\Support\Str;
-use Spatie\ErrorSolutions\Contracts\BaseSolution;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingMixManifestSolutionProvider as BaseMissingMixManifestSolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class MissingMixManifestSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\MissingMixManifestSolutionProvider
+class MissingMixManifestSolutionProvider extends BaseMissingMixManifestSolutionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

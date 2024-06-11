@@ -2,9 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\ViewNotFoundSolutionProvider as BaseViewNotFoundSolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-
-class ViewNotFoundSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\ViewNotFoundSolutionProvider
+class ViewNotFoundSolutionProvider extends BaseViewNotFoundSolutionProviderAlias  implements HasSolutionsForThrowable
 {
 
 }

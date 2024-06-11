@@ -1,6 +1,6 @@
 <?php
 
-use Spatie\ErrorSolutions\Solutions\SolutionProviders\UndefinedPropertySolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\UndefinedPropertySolutionProvider;
 
 it('can solve an undefined property exception when there is a similar property', function () {
     $providerClass = UndefinedPropertySolutionProvider::class;

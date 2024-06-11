@@ -2,29 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\SuggestImportSolution as BaseSuggestImportSolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class SuggestImportSolution extends \Spatie\ErrorSolutions\Solutions\SuggestImportSolution
+class SuggestImportSolution extends BaseSuggestImportSolutionAlias  implements Solution
 {
-    protected string $class;
 
-    public function __construct(string $class = '')
-    {
-        $this->class = $class;
-    }
-
-    public function getSolutionTitle(): string
-    {
-        return 'A class import is missing';
-    }
-
-    public function getSolutionDescription(): string
-    {
-        return 'You have a missing class import. Try importing this class: `'.$this->class.'`.';
-    }
-
-    public function getDocumentationLinks(): array
-    {
-        return [];
-    }
 }

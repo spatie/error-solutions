@@ -2,13 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Livewire\Exceptions\ComponentNotFoundException;
-use Livewire\LivewireComponentsFinder;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Laravel\Solutions\LivewireDiscoverSolution;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingLivewireComponentSolutionProvider as BaseMissingLivewireComponentSolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class MissingLivewireComponentSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\MissingLivewireComponentSolutionProvider
+class MissingLivewireComponentSolutionProvider extends BaseMissingLivewireComponentSolutionProviderAlias  implements HasSolutionsForThrowable
 {
 
 }

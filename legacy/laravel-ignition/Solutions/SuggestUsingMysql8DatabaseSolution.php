@@ -2,9 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\Laravel\SuggestUsingMysql8DatabaseSolution as BaseSuggestUsingMysql8DatabaseSolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class SuggestUsingMysql8DatabaseSolution extends \Spatie\ErrorSolutions\Laravel\Solutions\SuggestUsingMysql8DatabaseSolution
+class SuggestUsingMysql8DatabaseSolution extends BaseSuggestUsingMysql8DatabaseSolutionAlias implements Solution
 {
 
 }

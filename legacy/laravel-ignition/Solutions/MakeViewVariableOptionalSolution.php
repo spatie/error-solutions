@@ -2,11 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Str;
-use Spatie\ErrorSolutions\Contracts\RunnableSolution;
+use Spatie\ErrorSolutions\Solutions\Laravel\MakeViewVariableOptionalSolution as BaseMakeViewVariableOptionalSolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class MakeViewVariableOptionalSolution extends \Spatie\ErrorSolutions\Laravel\Solutions\MakeViewVariableOptionalSolution
+class MakeViewVariableOptionalSolution extends BaseMakeViewVariableOptionalSolutionAlias implements Solution
 {
 
 }

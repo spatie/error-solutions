@@ -2,10 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Illuminate\Support\Facades\Artisan;
-use Spatie\ErrorSolutions\Contracts\RunnableSolution;
+use Spatie\ErrorSolutions\Solutions\Laravel\GenerateAppKeySolution as BaseGenerateAppKeySolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class GenerateAppKeySolution extends \Spatie\ErrorSolutions\Laravel\Solutions\GenerateAppKeySolution
+class GenerateAppKeySolution extends BaseGenerateAppKeySolutionAlias implements Solution
 {
 
 }

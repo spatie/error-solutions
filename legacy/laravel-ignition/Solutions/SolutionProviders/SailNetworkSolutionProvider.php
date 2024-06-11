@@ -2,11 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Spatie\ErrorSolutions\Contracts\BaseSolution;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\SailNetworkSolutionProvider as BaseSailNetworkSolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class SailNetworkSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\SailNetworkSolutionProvider
+class SailNetworkSolutionProvider extends BaseSailNetworkSolutionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

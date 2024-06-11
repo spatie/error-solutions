@@ -2,13 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Illuminate\Support\Str;
-use Spatie\ErrorSolutions\Contracts\BaseSolution;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Contracts\Solution;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingViteManifestSolutionProvider as BaseMissingViteManifestSolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class MissingViteManifestSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\MissingViteManifestSolutionProvider
+class MissingViteManifestSolutionProvider extends BaseMissingViteManifestSolutionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

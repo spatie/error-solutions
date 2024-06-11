@@ -2,12 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Exception;
-use Spatie\ErrorSolutions\Contracts\BaseSolution;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\RunningLaravelDuskInProductionProvider as BaseRunningLaravelDuskInProductionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class RunningLaravelDuskInProductionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\RunningLaravelDuskInProductionProvider
+class RunningLaravelDuskInProductionProvider extends BaseRunningLaravelDuskInProductionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

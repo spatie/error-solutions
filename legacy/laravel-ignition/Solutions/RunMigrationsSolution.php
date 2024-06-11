@@ -2,10 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Illuminate\Support\Facades\Artisan;
-use Spatie\ErrorSolutions\Contracts\RunnableSolution;
+use Spatie\ErrorSolutions\Solutions\Laravel\RunMigrationsSolution as BaseRunMigrationsSolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class RunMigrationsSolution extends \Spatie\ErrorSolutions\Laravel\Solutions\RunMigrationsSolution
+class RunMigrationsSolution extends BaseRunMigrationsSolutionAlias implements Solution
 {
 
 }

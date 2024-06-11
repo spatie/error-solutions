@@ -2,9 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\Laravel\SuggestUsingMariadbDatabaseSolution as BaseSuggestUsingMariadbDatabaseSolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class SuggestUsingMariadbDatabaseSolution extends \Spatie\ErrorSolutions\Laravel\Solutions\SuggestUsingMariadbDatabaseSolution
+class SuggestUsingMariadbDatabaseSolution extends BaseSuggestUsingMariadbDatabaseSolutionAlias implements Solution
 {
 
 }

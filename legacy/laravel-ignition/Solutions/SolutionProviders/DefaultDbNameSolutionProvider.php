@@ -2,12 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Illuminate\Database\QueryException;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Laravel\Solutions\SuggestUsingCorrectDbNameSolution;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\DefaultDbNameSolutionProvider as BaseDefaultDbNameSolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class DefaultDbNameSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\DefaultDbNameSolutionProvider
+class DefaultDbNameSolutionProvider extends BaseDefaultDbNameSolutionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

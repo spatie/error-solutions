@@ -2,12 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Illuminate\Database\QueryException;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Laravel\Solutions\RunMigrationsSolution;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\TableNotFoundSolutionProvider as BaseTableNotFoundSolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class TableNotFoundSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\TableNotFoundSolutionProvider
+class TableNotFoundSolutionProvider extends BaseTableNotFoundSolutionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

@@ -2,13 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Illuminate\Support\Str;
-use OpenAI\Client;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Solutions\OpenAi\OpenAiSolutionProvider as BaseOpenAiSolutionProvider;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\OpenAiSolutionProvider as BaseOpenAiSolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class OpenAiSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\OpenAiSolutionProvider
+class OpenAiSolutionProvider extends BaseOpenAiSolutionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

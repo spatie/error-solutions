@@ -2,9 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions;
 
-use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\Laravel\SuggestUsingCorrectDbNameSolution as BaseSuggestUsingCorrectDbNameSolutionAlias;
+use Spatie\Ignition\Contracts\Solution;
 
-class SuggestUsingCorrectDbNameSolution extends \Spatie\ErrorSolutions\Laravel\Solutions\SuggestUsingCorrectDbNameSolution
+class SuggestUsingCorrectDbNameSolution extends BaseSuggestUsingCorrectDbNameSolutionAlias  implements Solution
 {
 
 }

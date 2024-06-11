@@ -2,13 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Livewire\Exceptions\PropertyNotFoundException;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Laravel\Solutions\SuggestLivewirePropertyNameSolution;
-use Spatie\ErrorSolutions\Laravel\Support\LivewireComponentParser;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\UndefinedLivewirePropertySolutionProvider as BaseUndefinedLivewirePropertySolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class UndefinedLivewirePropertySolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\UndefinedLivewirePropertySolutionProvider
+class UndefinedLivewirePropertySolutionProvider extends BaseUndefinedLivewirePropertySolutionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

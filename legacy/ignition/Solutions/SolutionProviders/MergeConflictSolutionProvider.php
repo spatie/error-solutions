@@ -2,8 +2,9 @@
 
 namespace Spatie\Ignition\Solutions\SolutionProviders;
 
+use Spatie\ErrorSolutions\SolutionProviders\MergeConflictSolutionProvider as BaseMergeConflictSolutionProviderAlias;
 use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class MergeConflictSolutionProvider extends \Spatie\ErrorSolutions\Solutions\SolutionProviders\MergeConflictSolutionProvider implements HasSolutionsForThrowable
+class MergeConflictSolutionProvider extends BaseMergeConflictSolutionProviderAlias implements HasSolutionsForThrowable
 {
 }

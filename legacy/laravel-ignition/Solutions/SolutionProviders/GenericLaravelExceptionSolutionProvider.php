@@ -2,13 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Illuminate\Broadcasting\BroadcastException;
-use Spatie\ErrorSolutions\Contracts\BaseSolution;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Laravel\Support\LaravelVersion;
-use Throwable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\GenericLaravelExceptionSolutionProvider as BaseGenericLaravelExceptionSolutionProviderAlias;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
 
-class GenericLaravelExceptionSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\GenericLaravelExceptionSolutionProvider
+class GenericLaravelExceptionSolutionProvider extends BaseGenericLaravelExceptionSolutionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

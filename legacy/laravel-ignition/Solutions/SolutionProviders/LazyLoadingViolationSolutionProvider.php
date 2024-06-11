@@ -2,13 +2,10 @@
 
 namespace Spatie\LaravelIgnition\Solutions\SolutionProviders;
 
-use Illuminate\Database\LazyLoadingViolationException;
-use Spatie\ErrorSolutions\Contracts\BaseSolution;
-use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Laravel\Support\LaravelVersion;
-use Throwable;
+use Spatie\Ignition\Contracts\HasSolutionsForThrowable;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\LazyLoadingViolationSolutionProvider as BaseLazyLoadingViolationSolutionProviderAlias;
 
-class LazyLoadingViolationSolutionProvider extends \Spatie\ErrorSolutions\Laravel\Solutions\SolutionProviders\LazyLoadingViolationSolutionProvider
+class LazyLoadingViolationSolutionProvider extends BaseLazyLoadingViolationSolutionProviderAlias implements HasSolutionsForThrowable
 {
 
 }

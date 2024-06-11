@@ -2,8 +2,9 @@
 
 namespace Spatie\Ignition\Solutions\SolutionProviders;
 
+use Spatie\ErrorSolutions\SolutionProviders\SolutionProviderRepository as BaseSolutionProviderRepositoryAlias;
 use Spatie\Ignition\Contracts\SolutionProviderRepository as SolutionProviderRepositoryContract;
 
-class SolutionProviderRepository extends \Spatie\ErrorSolutions\Solutions\SolutionProviders\SolutionProviderRepository implements SolutionProviderRepositoryContract
+class SolutionProviderRepository extends BaseSolutionProviderRepositoryAlias implements SolutionProviderRepositoryContract
 {
 }
