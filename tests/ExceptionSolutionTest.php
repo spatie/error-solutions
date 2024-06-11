@@ -2,9 +2,9 @@
 
 use Illuminate\Foundation\Auth\User;
 use Spatie\ErrorSolutions\Contracts\BaseSolution;
+use Spatie\ErrorSolutions\SolutionProviderRepository;
 use Spatie\ErrorSolutions\SolutionProviders\BadMethodCallSolutionProvider;
 use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingAppKeySolutionProvider;
-use Spatie\ErrorSolutions\SolutionProviders\SolutionProviderRepository;
 use Spatie\ErrorSolutions\Tests\Exceptions\AlwaysFalseSolutionProvider;
 use Spatie\ErrorSolutions\Tests\Exceptions\AlwaysTrueSolutionProvider;
 
