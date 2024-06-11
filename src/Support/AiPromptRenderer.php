@@ -2,7 +2,7 @@
 
 namespace Spatie\ErrorSolutions\Support;
 
-class Renderer
+class AiPromptRenderer
 {
     /**
      * @param array<string, mixed> $data

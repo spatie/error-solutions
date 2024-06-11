@@ -7,7 +7,7 @@ use Psr\SimpleCache\CacheInterface;
 use Spatie\Backtrace\Backtrace;
 use Spatie\Backtrace\Frame;
 use Spatie\ErrorSolutions\Contracts\Solution;
-use Spatie\ErrorSolutions\Support\Renderer;
+use Spatie\ErrorSolutions\Support\AiPromptRenderer;
 use Throwable;
 
 class OpenAiSolution implements Solution
@@ -88,7 +88,7 @@ class OpenAiSolution implements Solution
             applicationType: $this->applicationType,
         );
 
-        return (new Renderer())->renderAsString(
+        return (new AiPromptRenderer())->renderAsString(
             ['viewModel' => $viewModel],
             $viewPath,
         );
