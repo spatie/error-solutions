@@ -33,6 +33,10 @@ class InvalidRouteActionSolutionProvider implements HasSolutionsForThrowable
 
         $invalidController = $matches[1] ?? null;
 
+        if (! $invalidController) {
+            return [];
+        }
+
         $suggestedController = $this->findRelatedController($invalidController);
 
         if ($suggestedController === $invalidController) {

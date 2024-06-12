@@ -3,7 +3,7 @@
 namespace Spatie\ErrorSolutions\SolutionProviders\Laravel;
 
 use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
-use Spatie\ErrorSolutions\Solutions\Laravel\SuggestImportSolution;
+use Spatie\ErrorSolutions\Solutions\SuggestImportSolution;
 use Spatie\ErrorSolutions\Support\Laravel\Composer\ComposerClassMap;
 use Throwable;
 
