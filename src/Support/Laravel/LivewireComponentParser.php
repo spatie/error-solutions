@@ -15,7 +15,7 @@ class LivewireComponentParser
     /** @var class-string<Component> */
     protected string $componentClass;
 
-    /** @var ReflectionClass<Component>  */
+    /** @var ReflectionClass<Component> */
     protected ReflectionClass $reflectionClass;
 
     public static function create(string $componentAlias): self

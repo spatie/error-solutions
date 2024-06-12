@@ -6,11 +6,11 @@ use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
 
 class DiscoverSolutionProviders
 {
-    /** @var array<string, string>*/
+    /** @var array<string, string> */
     protected array $config = [
         'ai' => 'SolutionProviders/OpenAi',
         'php' => 'SolutionProviders',
-        'laravel' => 'SolutionProviders/Laravel'
+        'laravel' => 'SolutionProviders/Laravel',
     ];
 
     /**
@@ -62,7 +62,7 @@ class DiscoverSolutionProviders
 
         $files = glob($globPattern);
 
-        if (!$files) {
+        if (! $files) {
             return [];
         }
 
