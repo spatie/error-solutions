@@ -46,7 +46,7 @@ class MakeViewVariableOptionalSolution implements RunnableSolution
 
     public function getSolutionDescription(): string
     {
-        return '';
+        return $this->getSolutionActionDescription();
     }
 
     public function getRunParameters(): array
