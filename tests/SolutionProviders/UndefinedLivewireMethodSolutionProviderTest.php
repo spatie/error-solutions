@@ -15,6 +15,6 @@ it('can solve an unknown livewire method', function () {
 
     expect($canSolve)->toBeTrue();
 
-    expect($solution->getSolutionTitle())->toBe('Possible typo `Spatie\LaravelIgnition\Tests\stubs\Components\TestLivewireComponent::chnge`');
-    expect($solution->getSolutionDescription())->toBe('Did you mean `Spatie\LaravelIgnition\Tests\stubs\Components\TestLivewireComponent::change`?');
+    expect($solution->getSolutionTitle())->toBe('Possible typo `Spatie\ErrorSolutions\Tests\stubs\Laravel\Components\TestLivewireComponent::chnge`');
+    expect($solution->getSolutionDescription())->toBe('Did you mean `Spatie\ErrorSolutions\Tests\stubs\Laravel\Components\TestLivewireComponent::change`?');
 })->skip(LIVEWIRE_VERSION_3, 'Missing Livewire 3 support.');
