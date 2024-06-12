@@ -6,6 +6,11 @@ parameters:
 			path: src/Contracts/SolutionProviderRepository.php
 
 		-
+			message: "#^Method Spatie\\\\ErrorSolutions\\\\DiscoverSolutionProviders\\:\\:getProviderClassesForType\\(\\) should return array\\<Spatie\\\\ErrorSolutions\\\\Contracts\\\\HasSolutionsForThrowable\\> but returns array\\<int, string\\>\\.$#"
+			count: 1
+			path: src/DiscoverSolutionProviders.php
+
+		-
 			message: "#^Unable to resolve the template type TKey in call to function collect$#"
 			count: 1
 			path: src/SolutionProviders/Laravel/InvalidRouteActionSolutionProvider.php

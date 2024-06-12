@@ -6,13 +6,18 @@ use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
 
 class DiscoverSolutionProviders
 {
+    /** @var array<string, string>*/
     protected array $config = [
         'ai' => 'SolutionProviders/OpenAi',
         'php' => 'SolutionProviders',
         'laravel' => 'SolutionProviders/Laravel'
     ];
 
-    /** @return array<HasSolutionsForThrowable */
+    /**
+     * @param array<string> $types
+     *
+     * @return array<HasSolutionsForThrowable>
+     */
     public static function for(array $types): array
     {
         if (in_array('php', $types)) {
@@ -30,7 +35,7 @@ class DiscoverSolutionProviders
 
     }
 
-    /** @return array<HasSolutionsForThrowable */
+    /** @return array<HasSolutionsForThrowable> */
     public function get(): array
     {
         $providers = [];
@@ -42,6 +47,7 @@ class DiscoverSolutionProviders
         return $providers;
     }
 
+    /** @return array<HasSolutionsForThrowable> */
     protected function getProviderClassesForType(string $type): array
     {
         $relativePath = $this->config[$type] ?? null;
