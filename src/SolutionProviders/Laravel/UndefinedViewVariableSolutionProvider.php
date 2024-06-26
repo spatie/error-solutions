@@ -5,10 +5,10 @@ namespace Spatie\ErrorSolutions\SolutionProviders\Laravel;
 use Spatie\ErrorSolutions\Contracts\BaseSolution;
 use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
 use Spatie\ErrorSolutions\Contracts\Solution;
-use Spatie\LaravelIgnition\Exceptions\ViewException as IgnitionViewException;
-use Spatie\LaravelFlare\Exceptions\ViewException as FlareViewException;
 use Spatie\ErrorSolutions\Solutions\Laravel\MakeViewVariableOptionalSolution;
 use Spatie\ErrorSolutions\Solutions\Laravel\SuggestCorrectVariableNameSolution;
+use Spatie\LaravelFlare\Exceptions\ViewException as FlareViewException;
+use Spatie\LaravelIgnition\Exceptions\ViewException as IgnitionViewException;
 use Throwable;
 
 class UndefinedViewVariableSolutionProvider implements HasSolutionsForThrowable

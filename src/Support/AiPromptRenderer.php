@@ -30,4 +30,3 @@ class AiPromptRenderer
         return ob_get_clean();
     }
 }
-
