@@ -16,7 +16,7 @@ class OpenAiSolutionProvider implements HasSolutionsForThrowable
             return false;
         }
 
-        if (config('ErrorSolutions.open_ai_key') === null) {
+        if (config('error-solutions.open_ai_key') === null) {
             return false;
         }
 
@@ -26,7 +26,7 @@ class OpenAiSolutionProvider implements HasSolutionsForThrowable
     public function getSolutions(Throwable $throwable): array
     {
         $solutionProvider = new BaseOpenAiSolutionProvider(
-            openAiKey: config('ErrorSolutions.open_ai_key'),
+            openAiKey: config('error-solutions.open_ai_key'),
             cache: cache()->store(config('cache.default')),
             cacheTtlInSeconds: 60,
             applicationType: 'Laravel ' . Str::before(app()->version(), '.'),
