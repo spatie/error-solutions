@@ -2,6 +2,8 @@
 
 namespace Spatie\ErrorSolutions\Solutions\OpenAi;
 
+use Illuminate\Support\Str;
+
 class OpenAiSolutionResponse
 {
     protected string $rawText;
@@ -18,7 +20,9 @@ class OpenAiSolutionResponse
 
     public function links(): array
     {
-        $textLinks = $this->between('LINKS', 'ENDLINKS', $this->rawText);
+        $rawText = Str::finish($this->rawText, 'ENDLINKS');
+
+        $textLinks = $this->between('LINKS', 'ENDLINKS', $rawText);
 
         $textLinks = explode(PHP_EOL, $textLinks);
 
