@@ -3,9 +3,12 @@
 namespace Spatie\ErrorSolutions\Solutions\Laravel;
 
 use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 
 class SuggestUsingMariadbDatabaseSolution implements Solution
 {
+    use IsProvidedByFlare;
+
     public function getSolutionTitle(): string
     {
         return 'Database is not a MariaDB database';

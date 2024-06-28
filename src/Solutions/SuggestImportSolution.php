@@ -3,9 +3,12 @@
 namespace Spatie\ErrorSolutions\Solutions;
 
 use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 
 class SuggestImportSolution implements Solution
 {
+    use IsProvidedByFlare;
+
     protected string $class;
 
     public function __construct(string $class)

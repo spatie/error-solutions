@@ -4,9 +4,12 @@ namespace Spatie\ErrorSolutions\Solutions\Laravel;
 
 use Livewire\LivewireComponentsFinder;
 use Spatie\ErrorSolutions\Contracts\RunnableSolution;
+use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 
 class LivewireDiscoverSolution implements RunnableSolution
 {
+    use IsProvidedByFlare;
+
     protected string $customTitle;
 
     public function __construct(string $customTitle = '')

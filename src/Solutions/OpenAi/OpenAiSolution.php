@@ -7,11 +7,14 @@ use Psr\SimpleCache\CacheInterface;
 use Spatie\Backtrace\Backtrace;
 use Spatie\Backtrace\Frame;
 use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 use Spatie\ErrorSolutions\Support\AiPromptRenderer;
 use Throwable;
 
 class OpenAiSolution implements Solution
 {
+    use IsProvidedByFlare;
+
     public bool $aiGenerated = true;
 
     protected string $prompt;

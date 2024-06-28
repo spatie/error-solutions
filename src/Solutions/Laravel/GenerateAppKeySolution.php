@@ -4,9 +4,12 @@ namespace Spatie\ErrorSolutions\Solutions\Laravel;
 
 use Illuminate\Support\Facades\Artisan;
 use Spatie\ErrorSolutions\Contracts\RunnableSolution;
+use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 
 class GenerateAppKeySolution implements RunnableSolution
 {
+    use IsProvidedByFlare;
+
     public function getSolutionTitle(): string
     {
         return 'Your app key is missing';

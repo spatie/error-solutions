@@ -3,9 +3,12 @@
 namespace Spatie\ErrorSolutions\Solutions\Laravel;
 
 use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 
 class SuggestUsingMysql8DatabaseSolution implements Solution
 {
+    use IsProvidedByFlare;
+
     public function getSolutionTitle(): string
     {
         return 'Database is not a MySQL 8 database';

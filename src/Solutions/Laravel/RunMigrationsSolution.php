@@ -4,9 +4,12 @@ namespace Spatie\ErrorSolutions\Solutions\Laravel;
 
 use Illuminate\Support\Facades\Artisan;
 use Spatie\ErrorSolutions\Contracts\RunnableSolution;
+use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 
 class RunMigrationsSolution implements RunnableSolution
 {
+    use IsProvidedByFlare;
+
     protected string $customTitle;
 
     public function __construct(string $customTitle = '')

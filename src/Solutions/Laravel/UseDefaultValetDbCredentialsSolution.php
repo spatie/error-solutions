@@ -4,9 +4,12 @@ namespace Spatie\ErrorSolutions\Solutions\Laravel;
 
 use Illuminate\Support\Str;
 use Spatie\ErrorSolutions\Contracts\RunnableSolution;
+use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 
 class UseDefaultValetDbCredentialsSolution implements RunnableSolution
 {
+    use IsProvidedByFlare;
+
     public function getSolutionActionDescription(): string
     {
         return 'Pressing the button will change `DB_USER` and `DB_PASSWORD` in your `.env` file.';

@@ -5,9 +5,12 @@ namespace Spatie\ErrorSolutions\Solutions\Laravel;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Spatie\ErrorSolutions\Contracts\RunnableSolution;
+use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 
 class MakeViewVariableOptionalSolution implements RunnableSolution
 {
+    use IsProvidedByFlare;
+
     protected ?string $variableName;
 
     protected ?string $viewFile;

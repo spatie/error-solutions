@@ -3,9 +3,12 @@
 namespace Spatie\ErrorSolutions\Solutions\Laravel;
 
 use Spatie\ErrorSolutions\Contracts\Solution;
+use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 
 class SuggestLivewireMethodNameSolution implements Solution
 {
+    use IsProvidedByFlare;
+
     public function __construct(
         protected string $methodName,
         protected string $componentClass,
