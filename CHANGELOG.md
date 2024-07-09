@@ -2,6 +2,18 @@
 
 All notable changes to `error-solutions` will be documented in this file.
 
+## 1.0.5 - 2024-07-09
+
+### What's Changed
+
+* Legacy `RunnableSolution` should continue to extend legacy `Solution` by @duncanmcclean in https://github.com/spatie/error-solutions/pull/6
+
+### New Contributors
+
+* @duncanmcclean made their first contribution in https://github.com/spatie/error-solutions/pull/6
+
+**Full Changelog**: https://github.com/spatie/error-solutions/compare/1.0.4...1.0.5
+
 ## 1.0.4 - 2024-06-28
 
 **Full Changelog**: https://github.com/spatie/error-solutions/compare/1.0.3...1.0.4
