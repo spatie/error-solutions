@@ -14,7 +14,7 @@ class OpenAiSolutionProvider implements HasSolutionsForThrowable
         protected int               $cacheTtlInSeconds = 60 * 60,
         protected string|null       $applicationType = null,
         protected string|null       $applicationPath = null,
-        protected string            $openAiModel='gpt-3.5-turbo',
+        protected string            $openAiModel = 'gpt-3.5-turbo',
     ) {
         $this->cache ??= new DummyCache();
     }
