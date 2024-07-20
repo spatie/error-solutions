@@ -28,7 +28,7 @@ class OpenAiSolution implements Solution
         protected int|null            $cacheTtlInSeconds = 60,
         protected string|null         $applicationType = null,
         protected string|null         $applicationPath = null,
-        protected string              $openAiModel,
+        protected string|null         $openAiModel,
     ) {
         $this->prompt = $this->generatePrompt();
 
@@ -61,7 +61,7 @@ class OpenAiSolution implements Solution
         $solutionText = OpenAI::client($this->openAiKey)
             ->chat()
             ->create([
-                'model' => $this->openAiModel(),
+                'model' => $this->getModel(),
                 'messages' => [['role' => 'user', 'content' => $this->prompt]],
                 'max_tokens' => 1000,
                 'temperature' => 0,
@@ -97,6 +97,11 @@ class OpenAiSolution implements Solution
             $viewPath,
         );
     }
+
+    protected function getModel(): string
+     {
+        return $this->openAiModel ?? 'gpt-3.5-turbo';
+     }
 
     protected function getApplicationFrame(Throwable $throwable): ?Frame
     {
