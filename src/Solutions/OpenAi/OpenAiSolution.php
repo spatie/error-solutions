@@ -99,9 +99,9 @@ class OpenAiSolution implements Solution
     }
 
     protected function getModel(): string
-     {
+    {
         return $this->openAiModel ?? 'gpt-3.5-turbo';
-     }
+    }
 
     protected function getApplicationFrame(Throwable $throwable): ?Frame
     {
