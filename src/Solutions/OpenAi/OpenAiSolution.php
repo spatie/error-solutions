@@ -28,6 +28,7 @@ class OpenAiSolution implements Solution
         protected int|null            $cacheTtlInSeconds = 60,
         protected string|null         $applicationType = null,
         protected string|null         $applicationPath = null,
+        protected string|null         $openAiModel = null,
     ) {
         $this->prompt = $this->generatePrompt();
 
@@ -99,7 +100,7 @@ class OpenAiSolution implements Solution
 
     protected function getModel(): string
     {
-        return 'gpt-3.5-turbo';
+        return $this->openAiModel ?? 'gpt-3.5-turbo';
     }
 
     protected function getApplicationFrame(Throwable $throwable): ?Frame
