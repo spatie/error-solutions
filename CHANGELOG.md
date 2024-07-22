@@ -2,6 +2,18 @@
 
 All notable changes to `error-solutions` will be documented in this file.
 
+## 1.1.0 - 2024-07-22
+
+### What's Changed
+
+* Allow to customize OpenAI Model by @arnebr in https://github.com/spatie/error-solutions/pull/7
+
+### New Contributors
+
+* @arnebr made their first contribution in https://github.com/spatie/error-solutions/pull/7
+
+**Full Changelog**: https://github.com/spatie/error-solutions/compare/1.0.5...1.1.0
+
 ## 1.0.5 - 2024-07-09
 
 ### What's Changed
