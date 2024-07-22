@@ -17,27 +17,24 @@ class OpenAiSolutionResponse
     {
         return $this->between('FIX', 'ENDFIX', $this->rawText);
     }
-
+    
     public function links(): array
     {
-        $rawText = Str::finish($this->rawText, 'ENDLINKS');
-
+        $rawText = Str::finish($this->rawText, 'ENDLINKS');    
         $textLinks = $this->between('LINKS', 'ENDLINKS', $rawText);
-
         $textLinks = explode(PHP_EOL, $textLinks);
-
-        $textLinks = array_map(function ($textLink) {
+        $links = [];
+    
+        foreach ($textLinks as $textLink) {
             $textLink = str_replace('\\', '\\\\', $textLink);
             $textLink = str_replace('\\\\\\', '\\\\', $textLink);
-
-            return json_decode($textLink, true);
-        }, $textLinks);
-
-        array_filter($textLinks);
-
-        $links = [];
-        foreach ($textLinks as $textLink) {
-            $links[$textLink['title']] = $textLink['url'];
+    
+            $decodedLink = json_decode($textLink, true);
+    
+            if ($decodedLink !== null) {
+                // Ajouter au tableau de liens
+                $links[$decodedLink['title']] = $decodedLink['url'];
+            }
         }
 
         return $links;
