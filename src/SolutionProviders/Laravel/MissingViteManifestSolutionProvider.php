@@ -16,8 +16,9 @@ class MissingViteManifestSolutionProvider implements HasSolutionsForThrowable
 
     public function __construct()
     {
-        $this->links = ['Asset bundling with Vite' => 
-            'https://laravel.com/docs/'.LaravelVersion::major().'.x/vite#running-vite'];
+        $this->links = [
+            'Asset bundling with Vite' => 'https://laravel.com/docs/'.LaravelVersion::major().'.x/vite#running-vite',
+        ];
     }
 
     public function canSolve(Throwable $throwable): bool
