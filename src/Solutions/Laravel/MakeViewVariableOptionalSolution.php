@@ -15,7 +15,7 @@ class MakeViewVariableOptionalSolution implements RunnableSolution
 
     protected ?string $viewFile;
 
-    public function __construct(string $variableName = null, string $viewFile = null)
+    public function __construct(?string $variableName = null, ?string $viewFile = null)
     {
         $this->variableName = $variableName;
 
