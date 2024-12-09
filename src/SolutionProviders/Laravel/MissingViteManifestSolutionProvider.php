@@ -6,8 +6,8 @@ use Illuminate\Support\Str;
 use Spatie\ErrorSolutions\Contracts\BaseSolution;
 use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
 use Spatie\ErrorSolutions\Contracts\Solution;
-use Throwable;
 use Spatie\ErrorSolutions\Support\Laravel\LaravelVersion;
+use Throwable;
 
 class MissingViteManifestSolutionProvider implements HasSolutionsForThrowable
 {
