@@ -23,7 +23,7 @@
         "illuminate/broadcasting" : "^10.0|^11.0",
         "openai-php/client": "^0.10.1",
         "illuminate/cache" : "^10.0|^11.0",
-        "pestphp/pest" : "^2.20",
+        "pestphp/pest" : "^3.7",
         "phpstan/phpstan" : "^1.11",
         "psr/simple-cache-implementation" : "^3.0",
         "psr/simple-cache" : "^3.0",
