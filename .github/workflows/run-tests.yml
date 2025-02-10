@@ -51,7 +51,6 @@ jobs:
            composer update --with="livewire/livewire:^${{ matrix.livewire }}" --${{ matrix.stability }} --prefer-dist --no-interaction --no-suggest
 
       -   name: Install extra package
-          if: matrix.php != '8.0'
           run: composer require openai-php/client
 
       - name: Execute tests
