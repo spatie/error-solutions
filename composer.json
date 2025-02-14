@@ -18,7 +18,7 @@
         "php": "^8.0"
     },
     "require-dev" : {
-        "livewire/livewire": "^2.11|^3.3.5",
+        "livewire/livewire": "^2.11|^3.5.20",
         "illuminate/support": "^10.0|^11.0|^12.0",
         "illuminate/broadcasting" : "^10.0|^11.0|^12.0",
         "openai-php/client": "^0.10.1",
