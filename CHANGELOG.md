@@ -2,6 +2,17 @@
 
 All notable changes to `error-solutions` will be documented in this file.
 
+## 1.1.3 - 2025-02-14
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/spatie/error-solutions/pull/26
+* Update phpstan/phpstan requirement from ^1.11 to ^2.1 by @dependabot in https://github.com/spatie/error-solutions/pull/25
+* Remove unneccesary conditional in "Run Tests" workflow by @duncanmcclean in https://github.com/spatie/error-solutions/pull/27
+* Supports Laravel 12 by @duncanmcclean in https://github.com/spatie/error-solutions/pull/28
+
+**Full Changelog**: https://github.com/spatie/error-solutions/compare/1.1.2...1.1.3
+
 ## 1.1.2 - 2024-12-11
 
 ### What's Changed
