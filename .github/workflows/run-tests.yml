@@ -21,6 +21,8 @@ jobs:
             laravel: 12.*
           - laravel: 11.*
             livewire: 2.11
+          - laravel: 12.*
+            livewire: 2.11
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - LW${{ matrix.livewire }} -${{ matrix.stability }} - ${{ matrix.os }}
 
