@@ -2,7 +2,6 @@
 
 namespace Spatie\ErrorSolutions\SolutionProviders;
 
-use Illuminate\Support\Str;
 use ParseError;
 use Spatie\ErrorSolutions\Contracts\BaseSolution;
 use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
@@ -59,13 +58,7 @@ class MergeConflictSolutionProvider implements HasSolutionsForThrowable
 
     protected function hasMergeConflictExceptionMessage(Throwable $throwable): bool
     {
-        // For PHP 7.x and below
-        if (Str::startsWith($throwable->getMessage(), 'syntax error, unexpected \'<<\'')) {
-            return true;
-        }
-
-        // For PHP 8+
-        if (Str::startsWith($throwable->getMessage(), 'syntax error, unexpected token "<<"')) {
+        if (str_starts_with($throwable->getMessage(), 'syntax error, unexpected token "<<"')) {
             return true;
         }
 

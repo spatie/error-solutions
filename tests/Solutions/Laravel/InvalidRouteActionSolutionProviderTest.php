@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\InvalidRouteActionSolutionProvider;
 use Spatie\ErrorSolutions\Support\Laravel\Composer\ComposerClassMap;
 use Spatie\ErrorSolutions\Tests\stubs\Laravel\Controllers\TestTypoController;
-use Spatie\LaravelIgnition\Solutions\SolutionProviders\InvalidRouteActionSolutionProvider;
 
 beforeEach(function () {
     app()->bind(
@@ -24,7 +24,6 @@ it('can solve the exception', function () {
 it('can recommend changing the routes method', function () {
     Route::get('/test', TestTypoController::class);
 
-    /** @var \Spatie\Ignition\Contracts\Solution $solution */
     $solution = app(InvalidRouteActionSolutionProvider::class)->getSolutions(getInvalidRouteActionException())[0];
 
     expect(Str::contains($solution->getSolutionDescription(), 'Did you mean `TestTypoController`'))->toBeTrue();
@@ -35,7 +34,6 @@ it('wont recommend another controller class if the names are too different', fun
 
     $invalidController = 'UnrelatedTestTypoController';
 
-    /** @var \Spatie\Ignition\Contracts\Solution $solution */
     $solution = app(InvalidRouteActionSolutionProvider::class)->getSolutions(getInvalidRouteActionException($invalidController))[0];
 
     expect(Str::contains($solution->getSolutionDescription(), 'Did you mean `TestTypoController`'))->toBeFalse();

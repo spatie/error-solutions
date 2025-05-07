@@ -8,7 +8,6 @@ use Spatie\ErrorSolutions\Contracts\Solution;
 use Spatie\ErrorSolutions\Solutions\Laravel\MakeViewVariableOptionalSolution;
 use Spatie\ErrorSolutions\Solutions\Laravel\SuggestCorrectVariableNameSolution;
 use Spatie\LaravelFlare\Exceptions\ViewException as FlareViewException;
-use Spatie\LaravelIgnition\Exceptions\ViewException as IgnitionViewException;
 use Throwable;
 
 class UndefinedViewVariableSolutionProvider implements HasSolutionsForThrowable
@@ -19,7 +18,7 @@ class UndefinedViewVariableSolutionProvider implements HasSolutionsForThrowable
 
     public function canSolve(Throwable $throwable): bool
     {
-        if (! $throwable instanceof IgnitionViewException && ! $throwable instanceof FlareViewException) {
+        if (! $throwable instanceof FlareViewException) {
             return false;
         }
 
@@ -48,14 +47,14 @@ class UndefinedViewVariableSolutionProvider implements HasSolutionsForThrowable
     }
 
     /**
-     * @param IgnitionViewException|FlareViewException $throwable
+     * @param FlareViewException $throwable
      * @param string $variableName
      * @param string $viewFile
      *
      * @return array<int, \Spatie\ErrorSolutions\Contracts\Solution>
      */
     protected function findCorrectVariableSolutions(
-        IgnitionViewException|FlareViewException $throwable,
+        FlareViewException $throwable,
         string $variableName,
         string $viewFile
     ): array {

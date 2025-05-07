@@ -1,9 +1,9 @@
 <?php
 
 use Livewire\Exceptions\MethodNotFoundException;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\UndefinedLivewireMethodSolutionProvider;
 use Spatie\ErrorSolutions\Tests\stubs\Laravel\Components\TestLivewireComponent;
 use Spatie\ErrorSolutions\Tests\TestClasses\Laravel\FakeLivewireManager;
-use Spatie\LaravelIgnition\Solutions\SolutionProviders\UndefinedLivewireMethodSolutionProvider;
 
 it('can solve an unknown livewire method', function () {
     FakeLivewireManager::setUp()->addAlias('test-livewire-component', TestLivewireComponent::class);

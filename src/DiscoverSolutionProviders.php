@@ -16,7 +16,7 @@ class DiscoverSolutionProviders
     /**
      * @param array<string> $types
      *
-     * @return array<HasSolutionsForThrowable>
+     * @return array<class-string<HasSolutionsForThrowable>>
      */
     public static function for(array $types): array
     {
@@ -35,7 +35,7 @@ class DiscoverSolutionProviders
 
     }
 
-    /** @return array<HasSolutionsForThrowable> */
+    /** @return array<class-string<HasSolutionsForThrowable>> */
     public function get(): array
     {
         $providers = [];
@@ -47,7 +47,7 @@ class DiscoverSolutionProviders
         return $providers;
     }
 
-    /** @return array<HasSolutionsForThrowable> */
+    /** @return array<class-string<HasSolutionsForThrowable>> */
     protected function getProviderClassesForType(string $type): array
     {
         $relativePath = $this->config[$type] ?? null;
@@ -69,6 +69,7 @@ class DiscoverSolutionProviders
         $solutionProviders = array_map(function (string $solutionProviderFilePath) use ($namespace) {
             $fileName = pathinfo($solutionProviderFilePath, PATHINFO_FILENAME);
 
+            /** @var class-string<HasSolutionsForThrowable> $fqcn */
             $fqcn = $namespace . '\\' . $fileName;
 
             $validClass = in_array(HasSolutionsForThrowable::class, class_implements($fqcn) ?: []);
