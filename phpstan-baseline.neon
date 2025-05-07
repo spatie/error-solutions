@@ -36,11 +36,6 @@ parameters:
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Call to method getViewData\\(\\) on an unknown class Spatie\\\\LaravelIgnition\\\\Exceptions\\\\ViewException\\.$#"
-			count: 1
-			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
-
-		-
 			message: "#^Call to method isRunnable\\(\\) on an unknown class Spatie\\\\ErrorSolutions\\\\Solutions\\\\Laravel\\\\SuggestCorrectVariableNameSolution\\.$#"
 			count: 1
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
@@ -51,22 +46,12 @@ parameters:
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Class Spatie\\\\LaravelIgnition\\\\Exceptions\\\\ViewException not found\\.$#"
-			count: 1
-			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
-
-		-
 			message: "#^Instantiated class Spatie\\\\ErrorSolutions\\\\Solutions\\\\Laravel\\\\SuggestCorrectVariableNameSolution not found\\.$#"
 			count: 1
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
 			message: "#^Parameter \\$throwable of method Spatie\\\\ErrorSolutions\\\\SolutionProviders\\\\Laravel\\\\UndefinedViewVariableSolutionProvider\\:\\:findCorrectVariableSolutions\\(\\) has invalid type Spatie\\\\LaravelFlare\\\\Exceptions\\\\ViewException\\.$#"
-			count: 2
-			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
-
-		-
-			message: "#^Parameter \\$throwable of method Spatie\\\\ErrorSolutions\\\\SolutionProviders\\\\Laravel\\\\UndefinedViewVariableSolutionProvider\\:\\:findCorrectVariableSolutions\\(\\) has invalid type Spatie\\\\LaravelIgnition\\\\Exceptions\\\\ViewException\\.$#"
 			count: 2
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
@@ -101,17 +86,7 @@ parameters:
 			path: src/SolutionProviders/Laravel/UnknownValidationSolutionProvider.php
 
 		-
-			message: "#^Call to method getMessage\\(\\) on an unknown class Spatie\\\\Ignition\\\\Exceptions\\\\ViewException\\.$#"
-			count: 1
-			path: src/SolutionProviders/Laravel/ViewNotFoundSolutionProvider.php
-
-		-
 			message: "#^Call to method getMessage\\(\\) on an unknown class Spatie\\\\LaravelFlare\\\\Exceptions\\\\ViewException\\.$#"
-			count: 1
-			path: src/SolutionProviders/Laravel/ViewNotFoundSolutionProvider.php
-
-		-
-			message: "#^Class Spatie\\\\Ignition\\\\Exceptions\\\\ViewException not found\\.$#"
 			count: 1
 			path: src/SolutionProviders/Laravel/ViewNotFoundSolutionProvider.php
 
@@ -169,11 +144,6 @@ parameters:
 			message: "#^Method Spatie\\\\ErrorSolutions\\\\Solutions\\\\OpenAi\\\\OpenAiSolutionResponse\\:\\:links\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Solutions/OpenAi/OpenAiSolutionResponse.php
-
-		-
-			message: "#^Method Spatie\\\\ErrorSolutions\\\\Support\\\\AiPromptRenderer\\:\\:renderAsString\\(\\) should return string but returns string\\|false\\.$#"
-			count: 1
-			path: src/Support/AiPromptRenderer.php
 
 		-
 			message: "#^Property Spatie\\\\ErrorSolutions\\\\Support\\\\Laravel\\\\LivewireComponentParser\\:\\:\\$reflectionClass \\(ReflectionClass\\<Livewire\\\\Component\\>\\) does not accept ReflectionClass\\<object\\>\\.$#"

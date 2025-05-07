@@ -2,7 +2,7 @@
 
 use Illuminate\Database\LazyLoadingViolationException;
 use Illuminate\Foundation\Auth\User;
-use Spatie\LaravelIgnition\Solutions\SolutionProviders\LazyLoadingViolationSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\LazyLoadingViolationSolutionProvider;
 
 it('can solve lazy loading violations', function () {
     $canSolve = app(LazyLoadingViolationSolutionProvider::class)

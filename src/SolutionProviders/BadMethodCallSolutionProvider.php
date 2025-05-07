@@ -3,7 +3,6 @@
 namespace Spatie\ErrorSolutions\SolutionProviders;
 
 use BadMethodCallException;
-use Illuminate\Support\Collection;
 use ReflectionClass;
 use ReflectionMethod;
 use Spatie\ErrorSolutions\Contracts\BaseSolution;
@@ -76,23 +75,27 @@ class BadMethodCallSolutionProvider implements HasSolutionsForThrowable
      */
     protected function findPossibleMethod(string $class, string $invalidMethodName): ?ReflectionMethod
     {
-        return $this->getAvailableMethods($class)
-            ->sortByDesc(function (ReflectionMethod $method) use ($invalidMethodName) {
-                similar_text($invalidMethodName, $method->name, $percentage);
+        $methods = $this->getAvailableMethods($class);
 
-                return $percentage;
-            })->first();
+        usort($methods, function (ReflectionMethod $a, ReflectionMethod $b) use ($invalidMethodName) {
+            similar_text($invalidMethodName, $a->name, $percentA);
+            similar_text($invalidMethodName, $b->name, $percentB);
+
+            return $percentB <=> $percentA;
+        });
+
+        return $methods[0] ?? null;
     }
 
     /**
      * @param class-string $class
      *
-     * @return \Illuminate\Support\Collection<int, ReflectionMethod>
+     * @return ReflectionMethod[]
      */
-    protected function getAvailableMethods(string $class): Collection
+    protected function getAvailableMethods(string $class): array
     {
-        $class = new ReflectionClass($class);
+        $refClass = new ReflectionClass($class);
 
-        return Collection::make($class->getMethods());
+        return $refClass->getMethods();
     }
 }

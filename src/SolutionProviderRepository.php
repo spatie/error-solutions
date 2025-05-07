@@ -2,7 +2,6 @@
 
 namespace Spatie\ErrorSolutions;
 
-use Illuminate\Support\Collection;
 use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
 use Spatie\ErrorSolutions\Contracts\ProvidesSolution;
 use Spatie\ErrorSolutions\Contracts\Solution;
@@ -11,25 +10,25 @@ use Throwable;
 
 class SolutionProviderRepository implements SolutionProviderRepositoryContract
 {
-    /** @var Collection<int, class-string<HasSolutionsForThrowable>|HasSolutionsForThrowable> */
-    protected Collection $solutionProviders;
+    /** @var array<int, class-string<HasSolutionsForThrowable>|HasSolutionsForThrowable> */
+    protected array $solutionProviders;
 
     /** @param array<int, class-string<HasSolutionsForThrowable>|HasSolutionsForThrowable> $solutionProviders */
     public function __construct(array $solutionProviders = [])
     {
-        $this->solutionProviders = Collection::make($solutionProviders);
+        $this->solutionProviders = $solutionProviders;
     }
 
     public function registerSolutionProvider(string|HasSolutionsForThrowable $solutionProvider): SolutionProviderRepositoryContract
     {
-        $this->solutionProviders->push($solutionProvider);
+        $this->solutionProviders[] = $solutionProvider;
 
         return $this;
     }
 
-    public function registerSolutionProviders(array $solutionProviderClasses): SolutionProviderRepositoryContract
+    public function registerSolutionProviders(array $solutionProviders): SolutionProviderRepositoryContract
     {
-        $this->solutionProviders = $this->solutionProviders->merge($solutionProviderClasses);
+        $this->solutionProviders = array_merge($this->solutionProviders, $solutionProviders);
 
         return $this;
     }
@@ -46,26 +45,26 @@ class SolutionProviderRepository implements SolutionProviderRepositoryContract
             $solutions[] = $throwable->getSolution();
         }
 
-        $providedSolutions = $this
-            ->initialiseSolutionProviderRepositories()
-            ->filter(function (HasSolutionsForThrowable $solutionProvider) use ($throwable) {
-                try {
-                    return $solutionProvider->canSolve($throwable);
-                } catch (Throwable $exception) {
-                    return false;
-                }
-            })
-            ->map(function (HasSolutionsForThrowable $solutionProvider) use ($throwable) {
-                try {
-                    return $solutionProvider->getSolutions($throwable);
-                } catch (Throwable $exception) {
-                    return [];
-                }
-            })
-            ->flatten()
-            ->toArray();
+        $providedSolutions = [];
 
-        return array_merge($solutions, $providedSolutions);
+        foreach ($this->initialiseSolutionProviderRepositories() as $solutionProvider) {
+            try {
+                $solvable = $solutionProvider->canSolve($throwable);
+
+                if(! $solvable) {
+                    continue;
+                }
+
+                array_push($providedSolutions, ...$solutionProvider->getSolutions($throwable));
+            } catch (Throwable $exception) {
+                continue;
+            }
+        }
+
+        return [
+            ...$solutions,
+            ...$providedSolutions,
+        ];
     }
 
     public function getSolutionForClass(string $solutionClass): ?Solution
@@ -85,27 +84,27 @@ class SolutionProviderRepository implements SolutionProviderRepositoryContract
         return app($solutionClass);
     }
 
-    /** @return Collection<int, HasSolutionsForThrowable> */
-    protected function initialiseSolutionProviderRepositories(): Collection
+    /** @return array<int, HasSolutionsForThrowable> */
+    protected function initialiseSolutionProviderRepositories(): array
     {
-        return $this->solutionProviders
-            ->filter(function (HasSolutionsForThrowable|string $provider) {
+        $solutionProviders = array_filter(
+            $this->solutionProviders,
+            function (HasSolutionsForThrowable|string $provider) {
                 if (! in_array(HasSolutionsForThrowable::class, class_implements($provider) ?: [])) {
                     return false;
                 }
 
-                if (function_exists('config') && in_array($provider, config('ErrorSolutions.ignored_solution_providers', []))) {
+                if (function_exists('config') && in_array($provider, config('error_solutions.ignored_solution_providers', []))) {
                     return false;
                 }
 
                 return true;
-            })
-            ->map(function (string|HasSolutionsForThrowable $provider): HasSolutionsForThrowable {
-                if (is_string($provider)) {
-                    return new $provider;
-                }
+            }
+        );
 
-                return $provider;
-            });
+        return array_map(
+            fn (string|HasSolutionsForThrowable $provider) => is_string($provider) ? new $provider : $provider,
+            $solutionProviders
+        );
     }
 }

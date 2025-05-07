@@ -35,9 +35,7 @@
     },
     "autoload" : {
         "psr-4" : {
-            "Spatie\\ErrorSolutions\\" : "src",
-            "Spatie\\Ignition\\" : "legacy/ignition",
-            "Spatie\\LaravelIgnition\\" : "legacy/laravel-ignition"
+            "Spatie\\ErrorSolutions\\" : "src"
         }
     },
     "autoload-dev" : {

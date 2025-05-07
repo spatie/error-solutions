@@ -76,7 +76,7 @@ class OpenAiSolution implements Solution
     {
         $hash = sha1($this->prompt);
 
-        return "ignition-solution-{$hash}";
+        return "error-solution-{$hash}";
     }
 
     protected function generatePrompt(): string

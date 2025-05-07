@@ -3,7 +3,6 @@
 namespace Spatie\ErrorSolutions\SolutionProviders;
 
 use ErrorException;
-use Illuminate\Support\Collection;
 use ReflectionClass;
 use ReflectionProperty;
 use Spatie\ErrorSolutions\Contracts\BaseSolution;
@@ -36,7 +35,7 @@ class UndefinedPropertySolutionProvider implements HasSolutionsForThrowable
     {
         return [
             BaseSolution::create('Unknown Property')
-            ->setSolutionDescription($this->getSolutionDescription($throwable)),
+                ->setSolutionDescription($this->getSolutionDescription($throwable)),
         ];
     }
 
@@ -47,7 +46,7 @@ class UndefinedPropertySolutionProvider implements HasSolutionsForThrowable
         }
 
         extract(
-            /** @phpstan-ignore-next-line */
+        /** @phpstan-ignore-next-line */
             $this->getClassAndPropertyFromExceptionMessage($throwable->getMessage()),
             EXTR_OVERWRITE,
         );
@@ -56,12 +55,16 @@ class UndefinedPropertySolutionProvider implements HasSolutionsForThrowable
 
         $class = $class ?? '';
 
+        if(! $possibleProperty) {
+            return "Did you mean another property in {$class}?";
+        }
+
         return "Did you mean {$class}::\${$possibleProperty->name} ?";
     }
 
     protected function similarPropertyExists(Throwable $throwable): bool
     {
-        /** @phpstan-ignore-next-line  */
+        /** @phpstan-ignore-next-line */
         extract($this->getClassAndPropertyFromExceptionMessage($throwable->getMessage()), EXTR_OVERWRITE);
 
         $possibleProperty = $this->findPossibleProperty($class ?? '', $property ?? '');
@@ -90,32 +93,37 @@ class UndefinedPropertySolutionProvider implements HasSolutionsForThrowable
      * @param class-string $class
      * @param string $invalidPropertyName
      *
-     * @return mixed
+     * @return ReflectionProperty|null
      */
-    protected function findPossibleProperty(string $class, string $invalidPropertyName): mixed
+    protected function findPossibleProperty(string $class, string $invalidPropertyName): ?ReflectionProperty
     {
-        return $this->getAvailableProperties($class)
-            ->sortByDesc(function (ReflectionProperty $property) use ($invalidPropertyName) {
-                similar_text($invalidPropertyName, $property->name, $percentage);
+        $properties = $this->getAvailableProperties($class);
 
-                return $percentage;
-            })
-            ->filter(function (ReflectionProperty $property) use ($invalidPropertyName) {
-                similar_text($invalidPropertyName, $property->name, $percentage);
+        usort($properties, function (ReflectionProperty $a, ReflectionProperty $b) use ($invalidPropertyName) {
+            similar_text($invalidPropertyName, $a->name, $percentageA);
+            similar_text($invalidPropertyName, $b->name, $percentageB);
 
-                return $percentage >= self::MINIMUM_SIMILARITY;
-            })->first();
+            return $percentageB <=> $percentageA; // Sort descending
+        });
+
+        $filteredProperties = array_values(array_filter($properties, function (ReflectionProperty $property) use ($invalidPropertyName) {
+            similar_text($invalidPropertyName, $property->name, $percentage);
+
+            return $percentage >= self::MINIMUM_SIMILARITY;
+        }));
+
+        return $filteredProperties[0] ?? null;
     }
 
     /**
      * @param class-string $class
      *
-     * @return Collection<int, ReflectionProperty>
+     * @return ReflectionProperty[]
      */
-    protected function getAvailableProperties(string $class): Collection
+    protected function getAvailableProperties(string $class): array
     {
-        $class = new ReflectionClass($class);
+        $reflectionClass = new ReflectionClass($class);
 
-        return Collection::make($class->getProperties());
+        return $reflectionClass->getProperties();
     }
 }

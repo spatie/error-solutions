@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
-use Spatie\LaravelIgnition\Solutions\SolutionProviders\MissingViteManifestSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingViteManifestSolutionProvider;
 
 it('can solve a missing Vite manifest exception', function () {
     $canSolve = app(MissingViteManifestSolutionProvider::class)
@@ -13,7 +13,6 @@ it('can solve a missing Vite manifest exception', function () {
 it('recommends running `npm run dev` in a local environment', function () {
     app()->detectEnvironment(fn () => 'local');
 
-    /** @var \Spatie\Ignition\Contracts\Solution $solution */
     $solution = app(MissingViteManifestSolutionProvider::class)
         ->getSolutions(new Exception('Vite manifest not found at: public/build/manifest.json'))[0];
 
@@ -24,7 +23,6 @@ it('recommends running `npm run dev` in a local environment', function () {
 it('recommends running `npm run build` in a production environment', function () {
     app()->detectEnvironment(fn () => 'production');
 
-    /** @var \Spatie\Ignition\Contracts\Solution $solution */
     $solution = app(MissingViteManifestSolutionProvider::class)
         ->getSolutions(new Exception('Vite manifest not found at: public/build/manifest.json'))[0];
 
@@ -37,7 +35,6 @@ it('detects the package manager and adapts the recommended command', function (s
 
     file_put_contents(base_path($lockfile), '');
 
-    /** @var \Spatie\Ignition\Contracts\Solution $solution */
     $solution = app(MissingViteManifestSolutionProvider::class)
         ->getSolutions(new Exception('Vite manifest not found at: public/build/manifest.json'))[0];
 

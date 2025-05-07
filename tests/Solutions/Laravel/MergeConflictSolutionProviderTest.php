@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\View;
+use Spatie\ErrorSolutions\SolutionProviders\MergeConflictSolutionProvider;
 use Spatie\ErrorSolutions\Tests\stubs\Laravel\Components\GitConflictController;
-use Spatie\Ignition\Solutions\SolutionProviders\MergeConflictSolutionProvider;
 
 beforeEach(function () {
     View::addLocation(__DIR__.'/../stubs/views');

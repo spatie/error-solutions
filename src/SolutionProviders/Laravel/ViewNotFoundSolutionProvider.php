@@ -8,7 +8,6 @@ use InvalidArgumentException;
 use Spatie\ErrorSolutions\Contracts\BaseSolution;
 use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
 use Spatie\ErrorSolutions\Support\Laravel\StringComparator;
-use Spatie\Ignition\Exceptions\ViewException as IgnitionViewException;
 use Spatie\LaravelFlare\Exceptions\ViewException as FlareViewException;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
@@ -20,7 +19,7 @@ class ViewNotFoundSolutionProvider implements HasSolutionsForThrowable
 
     public function canSolve(Throwable $throwable): bool
     {
-        if (! $throwable instanceof InvalidArgumentException && (! $throwable instanceof IgnitionViewException || ! $throwable instanceof FlareViewException)) {
+        if (! $throwable instanceof InvalidArgumentException && ! $throwable instanceof FlareViewException) {
             return false;
         }
 

@@ -27,6 +27,12 @@ class AiPromptRenderer
 
         $this->render($data, $viewPath);
 
-        return ob_get_clean();
+        $rendered = ob_get_clean();
+
+        if($rendered === false) {
+            throw new \RuntimeException('Failed to get the output buffer content.');
+        }
+
+        return $rendered;
     }
 }
