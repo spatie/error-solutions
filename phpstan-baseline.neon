@@ -1,151 +1,169 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^PHPDoc tag @param for parameter \\$solutionProvider with type class\\-string\\<Spatie\\\\ErrorSolutions\\\\Contracts\\\\HasSolutionsForThrowable\\>\\|Spatie\\\\ErrorSolutions\\\\Contracts\\\\HasSolutionsForThrowable is not subtype of native type string\\.$#"
+			message: '#^PHPDoc tag @param for parameter \$solutionProvider with type class\-string\<Spatie\\ErrorSolutions\\Contracts\\HasSolutionsForThrowable\>\|Spatie\\ErrorSolutions\\Contracts\\HasSolutionsForThrowable is not subtype of native type string\.$#'
+			identifier: parameter.phpDocType
 			count: 1
 			path: src/Contracts/SolutionProviderRepository.php
 
 		-
-			message: "#^Method Spatie\\\\ErrorSolutions\\\\DiscoverSolutionProviders\\:\\:getProviderClassesForType\\(\\) should return array\\<Spatie\\\\ErrorSolutions\\\\Contracts\\\\HasSolutionsForThrowable\\> but returns array\\<int, string\\>\\.$#"
-			count: 1
-			path: src/DiscoverSolutionProviders.php
-
-		-
-			message: "#^Unable to resolve the template type TKey in call to function collect$#"
-			count: 1
-			path: src/SolutionProviders/Laravel/InvalidRouteActionSolutionProvider.php
-
-		-
-			message: "#^Unable to resolve the template type TValue in call to function collect$#"
-			count: 1
-			path: src/SolutionProviders/Laravel/InvalidRouteActionSolutionProvider.php
-
-		-
-			message: "#^Call to method getSolutionDescription\\(\\) on an unknown class Spatie\\\\ErrorSolutions\\\\Solutions\\\\Laravel\\\\SuggestCorrectVariableNameSolution\\.$#"
+			message: '#^Call to method getSolutionDescription\(\) on an unknown class Spatie\\ErrorSolutions\\Solutions\\Laravel\\SuggestCorrectVariableNameSolution\.$#'
+			identifier: class.notFound
 			count: 1
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Call to method getSolutionTitle\\(\\) on an unknown class Spatie\\\\ErrorSolutions\\\\Solutions\\\\Laravel\\\\SuggestCorrectVariableNameSolution\\.$#"
+			message: '#^Call to method getSolutionTitle\(\) on an unknown class Spatie\\ErrorSolutions\\Solutions\\Laravel\\SuggestCorrectVariableNameSolution\.$#'
+			identifier: class.notFound
 			count: 1
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Call to method getViewData\\(\\) on an unknown class Spatie\\\\LaravelFlare\\\\Exceptions\\\\ViewException\\.$#"
+			message: '#^Call to method getViewData\(\) on an unknown class Spatie\\LaravelFlare\\Exceptions\\ViewException\.$#'
+			identifier: class.notFound
 			count: 1
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Call to method isRunnable\\(\\) on an unknown class Spatie\\\\ErrorSolutions\\\\Solutions\\\\Laravel\\\\SuggestCorrectVariableNameSolution\\.$#"
+			message: '#^Call to method isRunnable\(\) on an unknown class Spatie\\ErrorSolutions\\Solutions\\Laravel\\SuggestCorrectVariableNameSolution\.$#'
+			identifier: class.notFound
 			count: 1
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Class Spatie\\\\LaravelFlare\\\\Exceptions\\\\ViewException not found\\.$#"
+			message: '#^Class Spatie\\LaravelFlare\\Exceptions\\ViewException not found\.$#'
+			identifier: class.notFound
 			count: 1
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Instantiated class Spatie\\\\ErrorSolutions\\\\Solutions\\\\Laravel\\\\SuggestCorrectVariableNameSolution not found\\.$#"
+			message: '#^Instantiated class Spatie\\ErrorSolutions\\Solutions\\Laravel\\SuggestCorrectVariableNameSolution not found\.$#'
+			identifier: class.notFound
 			count: 1
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Parameter \\$throwable of method Spatie\\\\ErrorSolutions\\\\SolutionProviders\\\\Laravel\\\\UndefinedViewVariableSolutionProvider\\:\\:findCorrectVariableSolutions\\(\\) has invalid type Spatie\\\\LaravelFlare\\\\Exceptions\\\\ViewException\\.$#"
+			message: '#^Parameter \$throwable of method Spatie\\ErrorSolutions\\SolutionProviders\\Laravel\\UndefinedViewVariableSolutionProvider\:\:findCorrectVariableSolutions\(\) has invalid type Spatie\\LaravelFlare\\Exceptions\\ViewException\.$#'
+			identifier: class.notFound
 			count: 2
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Unable to resolve the template type TKey in call to function collect$#"
+			message: '#^Unable to resolve the template type TKey in call to function collect$#'
+			identifier: argument.templateType
 			count: 1
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Unable to resolve the template type TValue in call to function collect$#"
+			message: '#^Unable to resolve the template type TValue in call to function collect$#'
+			identifier: argument.templateType
 			count: 1
 			path: src/SolutionProviders/Laravel/UndefinedViewVariableSolutionProvider.php
 
 		-
-			message: "#^Method Spatie\\\\ErrorSolutions\\\\SolutionProviders\\\\Laravel\\\\UnknownValidationSolutionProvider\\:\\:getAvailableMethods\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			message: '#^Method Spatie\\ErrorSolutions\\SolutionProviders\\Laravel\\UnknownValidationSolutionProvider\:\:getAvailableMethods\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
 			count: 1
 			path: src/SolutionProviders/Laravel/UnknownValidationSolutionProvider.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<int,ReflectionMethod\\>\\:\\:filter\\(\\) expects \\(callable\\(ReflectionMethod, int\\)\\: bool\\)\\|null, Closure\\(ReflectionMethod\\)\\: \\(0\\|1\\|false\\) given\\.$#"
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,ReflectionMethod\>\:\:filter\(\) expects \(callable\(ReflectionMethod, int\)\: bool\)\|null, Closure\(ReflectionMethod\)\: \(0\|1\|false\) given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/SolutionProviders/Laravel/UnknownValidationSolutionProvider.php
 
 		-
-			message: "#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			message: '#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
+			identifier: argument.templateType
 			count: 1
 			path: src/SolutionProviders/Laravel/UnknownValidationSolutionProvider.php
 
 		-
-			message: "#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			message: '#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
+			identifier: argument.templateType
 			count: 1
 			path: src/SolutionProviders/Laravel/UnknownValidationSolutionProvider.php
 
 		-
-			message: "#^Call to method getMessage\\(\\) on an unknown class Spatie\\\\LaravelFlare\\\\Exceptions\\\\ViewException\\.$#"
+			message: '#^Call to method getMessage\(\) on an unknown class Spatie\\LaravelFlare\\Exceptions\\ViewException\.$#'
+			identifier: class.notFound
 			count: 1
 			path: src/SolutionProviders/Laravel/ViewNotFoundSolutionProvider.php
 
 		-
-			message: "#^Class Spatie\\\\LaravelFlare\\\\Exceptions\\\\ViewException not found\\.$#"
+			message: '#^Class Spatie\\LaravelFlare\\Exceptions\\ViewException not found\.$#'
+			identifier: class.notFound
 			count: 1
 			path: src/SolutionProviders/Laravel/ViewNotFoundSolutionProvider.php
 
 		-
-			message: "#^Parameter \\#1 \\$missingView of method Spatie\\\\ErrorSolutions\\\\SolutionProviders\\\\Laravel\\\\ViewNotFoundSolutionProvider\\:\\:findRelatedView\\(\\) expects string, string\\|null given\\.$#"
+			message: '#^Parameter \#1 \$missingView of method Spatie\\ErrorSolutions\\SolutionProviders\\Laravel\\ViewNotFoundSolutionProvider\:\:findRelatedView\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/SolutionProviders/Laravel/ViewNotFoundSolutionProvider.php
 
 		-
-			message: "#^Class Livewire\\\\LivewireComponentsFinder not found\\.$#"
+			message: '#^Call to method build\(\) on an unknown class Livewire\\LivewireComponentsFinder\.$#'
+			identifier: class.notFound
 			count: 1
 			path: src/Solutions/Laravel/LivewireDiscoverSolution.php
 
 		-
-			message: "#^Method Spatie\\\\ErrorSolutions\\\\Solutions\\\\OpenAi\\\\DummyCache\\:\\:setMultiple\\(\\) has parameter \\$values with no value type specified in iterable type iterable\\.$#"
+			message: '#^Class Livewire\\LivewireComponentsFinder not found\.$#'
+			identifier: class.notFound
+			count: 2
+			path: src/Solutions/Laravel/LivewireDiscoverSolution.php
+
+		-
+			message: '#^Method Spatie\\ErrorSolutions\\Solutions\\OpenAi\\DummyCache\:\:setMultiple\(\) has parameter \$values with no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Solutions/OpenAi/DummyCache.php
 
 		-
-			message: "#^Cannot call method get\\(\\) on Psr\\\\SimpleCache\\\\CacheInterface\\|null\\.$#"
+			message: '#^Cannot call method get\(\) on Psr\\SimpleCache\\CacheInterface\|null\.$#'
+			identifier: method.nonObject
 			count: 1
 			path: src/Solutions/OpenAi/OpenAiSolution.php
 
 		-
-			message: "#^Cannot call method getSnippetAsString\\(\\) on Spatie\\\\Backtrace\\\\Frame\\|null\\.$#"
+			message: '#^Cannot call method getSnippetAsString\(\) on Spatie\\Backtrace\\Frame\|null\.$#'
+			identifier: method.nonObject
 			count: 1
 			path: src/Solutions/OpenAi/OpenAiSolution.php
 
 		-
-			message: "#^Cannot call method set\\(\\) on Psr\\\\SimpleCache\\\\CacheInterface\\|null\\.$#"
+			message: '#^Cannot call method set\(\) on Psr\\SimpleCache\\CacheInterface\|null\.$#'
+			identifier: method.nonObject
 			count: 1
 			path: src/Solutions/OpenAi/OpenAiSolution.php
 
 		-
-			message: "#^Parameter \\#1 \\$rawText of class Spatie\\\\ErrorSolutions\\\\Solutions\\\\OpenAi\\\\OpenAiSolutionResponse constructor expects string, string\\|null given\\.$#"
+			message: '#^Parameter \#1 \$rawText of class Spatie\\ErrorSolutions\\Solutions\\OpenAi\\OpenAiSolutionResponse constructor expects string, string\|null given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/Solutions/OpenAi/OpenAiSolution.php
 
 		-
-			message: "#^Parameter \\$line of class Spatie\\\\ErrorSolutions\\\\Solutions\\\\OpenAi\\\\OpenAiPromptViewModel constructor expects string, int given\\.$#"
+			message: '#^Parameter \$line of class Spatie\\ErrorSolutions\\Solutions\\OpenAi\\OpenAiPromptViewModel constructor expects string, int given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/Solutions/OpenAi/OpenAiSolution.php
 
 		-
-			message: "#^Property Spatie\\\\ErrorSolutions\\\\Solutions\\\\OpenAi\\\\OpenAiSolution\\:\\:\\$openAiSolutionResponse \\(Spatie\\\\ErrorSolutions\\\\Solutions\\\\OpenAi\\\\OpenAiSolutionResponse\\) does not accept Spatie\\\\ErrorSolutions\\\\Solutions\\\\OpenAi\\\\OpenAiSolutionResponse\\|null\\.$#"
+			message: '#^Property Spatie\\ErrorSolutions\\Solutions\\OpenAi\\OpenAiSolution\:\:\$openAiSolutionResponse \(Spatie\\ErrorSolutions\\Solutions\\OpenAi\\OpenAiSolutionResponse\) does not accept Spatie\\ErrorSolutions\\Solutions\\OpenAi\\OpenAiSolutionResponse\|null\.$#'
+			identifier: assign.propertyType
 			count: 1
 			path: src/Solutions/OpenAi/OpenAiSolution.php
 
 		-
-			message: "#^Method Spatie\\\\ErrorSolutions\\\\Solutions\\\\OpenAi\\\\OpenAiSolutionResponse\\:\\:links\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method Spatie\\ErrorSolutions\\Solutions\\OpenAi\\OpenAiSolutionResponse\:\:links\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Solutions/OpenAi/OpenAiSolutionResponse.php
 
 		-
-			message: "#^Property Spatie\\\\ErrorSolutions\\\\Support\\\\Laravel\\\\LivewireComponentParser\\:\\:\\$reflectionClass \\(ReflectionClass\\<Livewire\\\\Component\\>\\) does not accept ReflectionClass\\<object\\>\\.$#"
+			message: '#^Property Spatie\\ErrorSolutions\\Support\\Laravel\\LivewireComponentParser\:\:\$reflectionClass \(ReflectionClass\<Livewire\\Component\>\) does not accept ReflectionClass\<object\>\.$#'
+			identifier: assign.propertyType
 			count: 1
 			path: src/Support/Laravel/LivewireComponentParser.php

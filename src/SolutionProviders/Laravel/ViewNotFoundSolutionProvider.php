@@ -10,7 +10,6 @@ use Spatie\ErrorSolutions\Contracts\HasSolutionsForThrowable;
 use Spatie\ErrorSolutions\Support\Laravel\StringComparator;
 use Spatie\LaravelFlare\Exceptions\ViewException as FlareViewException;
 use Symfony\Component\Finder\Finder;
-use Symfony\Component\Finder\SplFileInfo;
 use Throwable;
 
 class ViewNotFoundSolutionProvider implements HasSolutionsForThrowable
@@ -23,7 +22,7 @@ class ViewNotFoundSolutionProvider implements HasSolutionsForThrowable
             return false;
         }
 
-        return (bool)preg_match(self::REGEX, $throwable->getMessage(), $matches);
+        return (bool) preg_match(self::REGEX, $throwable->getMessage(), $matches);
     }
 
     public function getSolutions(Throwable $throwable): array
@@ -103,12 +102,10 @@ class ViewNotFoundSolutionProvider implements HasSolutionsForThrowable
         $views = [];
 
         foreach ($files as $file) {
-            if ($file instanceof SplFileInfo) {
-                $view = $file->getRelativePathname();
-                $view = str_replace($extensionsWithDots, '', $view);
-                $view = str_replace('/', '.', $view);
-                $views[] = $view;
-            }
+            $view = $file->getRelativePathname();
+            $view = str_replace($extensionsWithDots, '', $view);
+            $view = str_replace('/', '.', $view);
+            $views[] = $view;
         }
 
         return $views;

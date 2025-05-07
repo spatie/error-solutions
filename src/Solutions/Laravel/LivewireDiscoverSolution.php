@@ -3,6 +3,7 @@
 namespace Spatie\ErrorSolutions\Solutions\Laravel;
 
 use Livewire\LivewireComponentsFinder;
+use Livewire\Mechanisms\ComponentRegistry;
 use Spatie\ErrorSolutions\Contracts\RunnableSolution;
 use Spatie\ErrorSolutions\Solutions\Concerns\IsProvidedByFlare;
 
@@ -51,6 +52,8 @@ class LivewireDiscoverSolution implements RunnableSolution
 
     public function run(array $parameters = []): void
     {
-        app(LivewireComponentsFinder::class)->build();
+        if(app()->has(LivewireComponentsFinder::class)){
+            app(LivewireComponentsFinder::class)->build();
+        }
     }
 }

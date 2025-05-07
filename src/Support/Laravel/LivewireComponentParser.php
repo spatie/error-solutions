@@ -6,6 +6,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\LivewireManager;
+use Livewire\Mechanisms\ComponentRegistry;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionProperty;
@@ -25,8 +26,26 @@ class LivewireComponentParser
 
     public function __construct(protected string $componentAlias)
     {
-        $this->componentClass = app(LivewireManager::class)->getClass($this->componentAlias);
-        $this->reflectionClass = new ReflectionClass($this->componentClass);
+        $componentClass = null;
+
+        if(app()->has(ComponentRegistry::class)){
+            $componentClass = app(ComponentRegistry::class)->getClass($this->componentAlias);
+        }
+
+        if($componentClass === null && app()->has(LivewireManager::class)){
+            $livewireManager = app(LivewireManager::class);
+
+            $componentClass = method_exists($livewireManager, 'getClass')
+                ?  $livewireManager->getClass($this->componentAlias)
+                : null;
+        }
+
+        if($componentClass === null){
+            throw new \RuntimeException("Could not resolve component class for alias `{$this->componentAlias}`.");
+        }
+
+        $this->componentClass = $componentClass;
+        $this->reflectionClass = new ReflectionClass($componentClass);
     }
 
     public function getComponentClass(): string
