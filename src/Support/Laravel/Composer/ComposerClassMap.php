@@ -2,11 +2,11 @@
 
 namespace Spatie\ErrorSolutions\Support\Laravel\Composer;
 
+use function app_path;
+use function base_path;
 use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
-use function app_path;
-use function base_path;
 
 class ComposerClassMap
 {

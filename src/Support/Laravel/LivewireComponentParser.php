@@ -28,11 +28,11 @@ class LivewireComponentParser
     {
         $componentClass = null;
 
-        if(app()->has(ComponentRegistry::class)){
+        if (app()->has(ComponentRegistry::class)) {
             $componentClass = app(ComponentRegistry::class)->getClass($this->componentAlias);
         }
 
-        if($componentClass === null && app()->has(LivewireManager::class)){
+        if ($componentClass === null && app()->has(LivewireManager::class)) {
             $livewireManager = app(LivewireManager::class);
 
             $componentClass = method_exists($livewireManager, 'getClass')
@@ -40,7 +40,7 @@ class LivewireComponentParser
                 : null;
         }
 
-        if($componentClass === null){
+        if ($componentClass === null) {
             throw new \RuntimeException("Could not resolve component class for alias `{$this->componentAlias}`.");
         }
 
