@@ -46,7 +46,7 @@ class UndefinedPropertySolutionProvider implements HasSolutionsForThrowable
         }
 
         extract(
-        /** @phpstan-ignore-next-line */
+            /** @phpstan-ignore-next-line */
             $this->getClassAndPropertyFromExceptionMessage($throwable->getMessage()),
             EXTR_OVERWRITE,
         );
@@ -55,7 +55,7 @@ class UndefinedPropertySolutionProvider implements HasSolutionsForThrowable
 
         $class = $class ?? '';
 
-        if(! $possibleProperty) {
+        if (! $possibleProperty) {
             return "Did you mean another property in {$class}?";
         }
 

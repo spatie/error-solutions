@@ -29,7 +29,7 @@ class AiPromptRenderer
 
         $rendered = ob_get_clean();
 
-        if($rendered === false) {
+        if ($rendered === false) {
             throw new \RuntimeException('Failed to get the output buffer content.');
         }
 

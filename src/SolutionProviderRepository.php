@@ -51,7 +51,7 @@ class SolutionProviderRepository implements SolutionProviderRepositoryContract
             try {
                 $solvable = $solutionProvider->canSolve($throwable);
 
-                if(! $solvable) {
+                if (! $solvable) {
                     continue;
                 }
 
