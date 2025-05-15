@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\View;
+use Spatie\ErrorSolutions\Solutions\Laravel\MakeViewVariableOptionalSolution;
 use Spatie\ErrorSolutions\Support\Laravel\Composer\ComposerClassMap;
-use Spatie\LaravelIgnition\Solutions\MakeViewVariableOptionalSolution;
 
 beforeEach(function () {
     View::addLocation(__DIR__.'/../stubs/views');

@@ -2,8 +2,6 @@
 
 namespace Spatie\ErrorSolutions\Solutions\OpenAi;
 
-use Illuminate\Support\Str;
-
 class OpenAiSolutionResponse
 {
     protected string $rawText;
@@ -20,7 +18,7 @@ class OpenAiSolutionResponse
 
     public function links(): array
     {
-        $rawText = Str::finish($this->rawText, 'ENDLINKS');
+        $rawText = $this->finishString($this->rawText, 'ENDLINKS');
 
         $textLinks = $this->between('LINKS', 'ENDLINKS', $rawText);
 
@@ -36,6 +34,7 @@ class OpenAiSolutionResponse
         array_filter($textLinks);
 
         $links = [];
+
         foreach ($textLinks as $textLink) {
             if (isset($textLink['title']) && isset($textLink['url'])) {
                 $links[$textLink['title']] = $textLink['url'];
@@ -60,5 +59,15 @@ class OpenAiSolutionResponse
         }
 
         return trim(substr($text, $startPosition, $endPosition - $startPosition));
+    }
+
+    /**
+     * @note This function was copied from Laravel's Str::finish()
+     */
+    protected function finishString(string $value, string $cap): string
+    {
+        $quoted = preg_quote($cap, '/');
+
+        return preg_replace('/(?:'.$quoted.')+$/u', '', $value).$cap;
     }
 }

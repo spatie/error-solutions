@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\QueryException;
-use Spatie\LaravelIgnition\Solutions\SolutionProviders\UnknownMysql8CollationSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\UnknownMysql8CollationSolutionProvider;
 
 it('can solve an an unknown mysql collation ', function () {
     $solutionProvider = new UnknownMysql8CollationSolutionProvider();

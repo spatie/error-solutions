@@ -2,11 +2,9 @@
 
 namespace Spatie\ErrorSolutions\Solutions;
 
-use Illuminate\Contracts\Support\Arrayable;
 use Spatie\ErrorSolutions\Contracts\Solution;
 
-/** @implements Arrayable<string, array<string,string>|string|false> */
-class SolutionTransformer implements Arrayable
+class SolutionTransformer
 {
     protected Solution $solution;
 
