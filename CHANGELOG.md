@@ -2,6 +2,12 @@
 
 All notable changes to `error-solutions` will be documented in this file.
 
+## 2.0.0 - 2025-05-15
+
+- Removes legacy stuff for Ignition
+- Removes dependency on Laravel for PHP framework agnostic parts
+- Fixes some issues which were raised by PHPStan
+
 ## 1.1.3 - 2025-02-14
 
 ### What's Changed
