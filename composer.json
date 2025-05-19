@@ -21,7 +21,7 @@
         "livewire/livewire": "^2.11|^3.5.20",
         "illuminate/support": "^10.0|^11.0|^12.0",
         "illuminate/broadcasting" : "^10.0|^11.0|^12.0",
-        "openai-php/client": "^0.10.0",
+        "openai-php/client": "^0.13.0",
         "illuminate/cache" : "^10.0|^11.0|^12.0",
         "pestphp/pest" : "^2.20|^3.0",
         "phpstan/phpstan" : "^2.1",
