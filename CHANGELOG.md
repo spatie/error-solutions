@@ -2,6 +2,10 @@
 
 All notable changes to `error-solutions` will be documented in this file.
 
+## 2.0.1 - 2025-07-01
+
+- Rewrite transformer
+
 ## 2.0.0 - 2025-05-15
 
 - Removes legacy stuff for Ignition
