@@ -2,6 +2,22 @@
 
 All notable changes to `error-solutions` will be documented in this file.
 
+## 2.0.2 - 2025-11-06
+
+### What's Changed
+
+* Update issue template by @AlexVanderbist in https://github.com/spatie/error-solutions/pull/36
+* Update MissingViteManifestSolutionProvider.php to include bun by @fylzero in https://github.com/spatie/error-solutions/pull/39
+* Bump stefanzweifel/git-auto-commit-action from 5 to 7 by @dependabot[bot] in https://github.com/spatie/error-solutions/pull/37
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/spatie/error-solutions/pull/35
+
+### New Contributors
+
+* @AlexVanderbist made their first contribution in https://github.com/spatie/error-solutions/pull/36
+* @fylzero made their first contribution in https://github.com/spatie/error-solutions/pull/39
+
+**Full Changelog**: https://github.com/spatie/error-solutions/compare/2.0.1...2.0.2
+
 ## 2.0.1 - 2025-07-01
 
 - Rewrite transformer
