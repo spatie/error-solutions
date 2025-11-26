@@ -2,6 +2,19 @@
 
 All notable changes to `error-solutions` will be documented in this file.
 
+## 2.0.3 - 2025-11-26
+
+### What's Changed
+
+* Added Symfony 8 support to all symfony/* packages. by @thecaliskan in https://github.com/spatie/error-solutions/pull/40
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/spatie/error-solutions/pull/41
+
+### New Contributors
+
+* @thecaliskan made their first contribution in https://github.com/spatie/error-solutions/pull/40
+
+**Full Changelog**: https://github.com/spatie/error-solutions/compare/2.0.2...2.0.3
+
 ## 2.0.2 - 2025-11-06
 
 ### What's Changed
