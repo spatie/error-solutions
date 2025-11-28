@@ -2,6 +2,18 @@
 
 All notable changes to `error-solutions` will be documented in this file.
 
+## 2.0.4 - 2025-11-28
+
+### What's Changed
+
+* fix: casted the error code to int before comparison by @yuriy-sorokin in https://github.com/spatie/error-solutions/pull/42
+
+### New Contributors
+
+* @yuriy-sorokin made their first contribution in https://github.com/spatie/error-solutions/pull/42
+
+**Full Changelog**: https://github.com/spatie/error-solutions/compare/2.0.3...2.0.4
+
 ## 2.0.3 - 2025-11-26
 
 ### What's Changed
