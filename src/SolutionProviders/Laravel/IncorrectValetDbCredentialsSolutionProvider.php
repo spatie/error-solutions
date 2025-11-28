@@ -21,7 +21,7 @@ class IncorrectValetDbCredentialsSolutionProvider implements HasSolutionsForThro
             return false;
         }
 
-        if (! $this->isAccessDeniedCode($throwable->getCode())) {
+        if (! $this->isAccessDeniedCode((int) $throwable->getCode())) {
             return false;
         }
 
@@ -50,7 +50,7 @@ class IncorrectValetDbCredentialsSolutionProvider implements HasSolutionsForThro
         return file_exists(base_path('.env'));
     }
 
-    protected function isAccessDeniedCode(string $code): bool
+    protected function isAccessDeniedCode(int $code): bool
     {
         return $code === static::MYSQL_ACCESS_DENIED_CODE;
     }
