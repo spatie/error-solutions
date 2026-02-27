@@ -2,6 +2,10 @@
 
 All notable changes to `error-solutions` will be documented in this file.
 
+## 2.0.5 - 2026-02-27
+
+Add support for Livewire 4 and Laravel 13
+
 ## 2.0.4 - 2025-11-28
 
 ### What's Changed
