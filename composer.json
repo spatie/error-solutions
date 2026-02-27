@@ -18,11 +18,11 @@
         "php": "^8.2"
     },
     "require-dev" : {
-        "livewire/livewire": "^2.11|^3.5.20",
-        "illuminate/support": "^10.0|^11.0|^12.0",
-        "illuminate/broadcasting" : "^10.0|^11.0|^12.0",
+        "livewire/livewire": "^2.11|^3.5.20|^4.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/broadcasting" : "^10.0|^11.0|^12.0|^13.0",
         "openai-php/client": "^0.13.0",
-        "illuminate/cache" : "^10.0|^11.0|^12.0",
+        "illuminate/cache" : "^10.0|^11.0|^12.0|^13.0",
         "pestphp/pest" : "^2.20|^3.0",
         "phpstan/phpstan" : "^2.1",
         "psr/simple-cache-implementation" : "^3.0",
@@ -31,7 +31,7 @@
         "symfony/cache" : "^5.4|^6.0|^7.0|^8.0",
         "symfony/process" : "^5.4|^6.0|^7.0|^8.0",
         "vlucas/phpdotenv" : "^5.5",
-        "orchestra/testbench": "8.22.3|^9.0|^10.0"
+        "orchestra/testbench": "8.22.3|^9.0|^10.0|^11.0"
     },
     "autoload" : {
         "psr-4" : {
