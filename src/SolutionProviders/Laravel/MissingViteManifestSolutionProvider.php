@@ -37,6 +37,8 @@ class MissingViteManifestSolutionProvider implements HasSolutionsForThrowable
     {
         /** @var string */
         $baseCommand = collect([
+            'bun.lockb' => 'bun',
+            'bun.lock' => 'bun',
             'pnpm-lock.yaml' => 'pnpm',
             'yarn.lock' => 'yarn',
         ])->first(fn ($_, $lockfile) => file_exists(base_path($lockfile)), 'npm run');
