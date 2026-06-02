@@ -1,7 +1,7 @@
 # Error solutions
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/error-solutions.svg?style=flat-square)](https://packagist.org/packages/spatie/error-solutions)
-[![Tests](https://img.shields.io/github/actions/workflow/status/spatie/error-solutions/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/spatie/error-solutions/actions/workflows/run-tests.yml)
+[![Tests](https://github.com/spatie/error-solutions/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/error-solutions/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/error-solutions.svg?style=flat-square)](https://packagist.org/packages/spatie/error-solutions)
 
 At Spatie we develop multiple packages handling errors and providing solutions for these errors. This package is a collection of all these solutions.
