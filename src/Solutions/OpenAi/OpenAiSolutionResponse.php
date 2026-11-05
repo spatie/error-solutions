@@ -31,8 +31,6 @@ class OpenAiSolutionResponse
             return json_decode($textLink, true);
         }, $textLinks);
 
-        array_filter($textLinks);
-
         $links = [];
 
         foreach ($textLinks as $textLink) {
