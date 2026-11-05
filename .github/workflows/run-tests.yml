@@ -11,12 +11,12 @@ jobs:
       matrix:
         php: [8.4, 8.5, 8.6]
         laravel: [12.*, 13.*]
-        livewire: [3.5.20, 4.0]
+        livewire: [3.*, 4.*]
         stability: [prefer-lowest, prefer-stable]
         os: [ubuntu-latest, windows-latest]
         exclude:
           - laravel: 13.*
-            livewire: 3.5.20
+            livewire: 3.*
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - LW${{ matrix.livewire }} -${{ matrix.stability }} - ${{ matrix.os }}
 
@@ -50,8 +50,8 @@ jobs:
 
       -  name: Install dependencies
          run: |
-           composer require "laravel/framework:${{ matrix.laravel }}" "nesbot/carbon:^2.72|^3.0" --no-interaction --no-update
-           composer update --with="livewire/livewire:^${{ matrix.livewire }}" --${{ matrix.stability }} --prefer-dist --no-interaction --no-suggest
+           composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
+           composer update --with="livewire/livewire:${{ matrix.livewire }}" --${{ matrix.stability }} --prefer-dist --no-interaction --no-suggest
 
       -   name: Install extra package
           run: composer require openai-php/client
