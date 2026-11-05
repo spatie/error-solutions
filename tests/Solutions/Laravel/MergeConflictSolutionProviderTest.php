@@ -18,3 +18,22 @@ it('can solve merge conflict exception', function () {
 
     expect($canSolve)->toBeTrue();
 });
+
+it('can describe a merge conflict without a source branch', function () {
+    $file = tempnam(sys_get_temp_dir(), 'merge-conflict-');
+    file_put_contents($file, "<?php\n<<<<<<< HEAD\n=======\n>>>>>>>\n");
+
+    try {
+        try {
+            require $file;
+        } catch (ParseError $exception) {
+            $provider = app(MergeConflictSolutionProvider::class);
+
+            expect($provider->canSolve($exception))->toBeTrue()
+                ->and($provider->getSolutions($exception)[0]->getSolutionTitle())
+                ->toStartWith("Merge conflict from branch 'unknown branch' into ");
+        }
+    } finally {
+        unlink($file);
+    }
+});

@@ -35,7 +35,7 @@ class MergeConflictSolutionProvider implements HasSolutionsForThrowable
     {
         $file = (string)file_get_contents($throwable->getFile());
         preg_match('/\>\>\>\>\>\>\> (.*?)\n/', $file, $matches);
-        $source = $matches[1];
+        $source = $matches[1] ?? 'unknown branch';
 
         $target = $this->getCurrentBranch(basename($throwable->getFile()));
 

@@ -28,8 +28,10 @@ class LivewireComponentParser
     {
         $componentClass = null;
 
-        if (app()->has(ComponentRegistry::class)) {
-            $componentClass = app(ComponentRegistry::class)->getClass($this->componentAlias);
+        if (class_exists(ComponentRegistry::class)) {
+            if (app()->has(ComponentRegistry::class)) {
+                $componentClass = app(ComponentRegistry::class)->getClass($this->componentAlias);
+            }
         }
 
         if ($componentClass === null && app()->has(LivewireManager::class)) {

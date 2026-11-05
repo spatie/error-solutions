@@ -5,6 +5,7 @@ namespace Spatie\ErrorSolutions\SolutionProviders\Laravel;
 use BadMethodCallException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Factory;
 use Illuminate\Validation\Validator;
 use ReflectionClass;
 use ReflectionMethod;
@@ -62,16 +63,17 @@ class UnknownValidationSolutionProvider implements HasSolutionsForThrowable
         return $matches['method'];
     }
 
+    /** @return Collection<int, string> */
     protected function getAvailableMethods(): Collection
     {
         $class = new ReflectionClass(Validator::class);
 
-        $extensions = Collection::make((app('validator')->make([], []))->extensions)
+        $extensions = Collection::make(app(Factory::class)->make([], [])->extensions)
             ->keys()
             ->map(fn (string $extension) => 'validate'.Str::studly($extension));
 
         return Collection::make($class->getMethods())
-            ->filter(fn (ReflectionMethod $method) => preg_match('/(validate(?!(Attribute|UsingCustomRule))[A-Z][a-zA-Z]+)/', $method->name))
+            ->filter(fn (ReflectionMethod $method) => preg_match('/(validate(?!(Attribute|UsingCustomRule))[A-Z][a-zA-Z]+)/', $method->name) === 1)
             ->map(fn (ReflectionMethod $method) => $method->name)
             ->merge($extensions);
     }
